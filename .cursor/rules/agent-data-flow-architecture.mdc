@@ -1,0 +1,156 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Agent Data Flow Architecture
+
+## Problem Identified
+The original implementation had a critical disconnect between patient response collection and agent analysis:
+
+### **Root Issues**
+1. **Research Agent Context Mismatch**: Research agent received historical patient data instead of current patient responses
+2. **Task Output Timing**: QnA task output was set after task creation, making data unavailable during agent initialization  
+3. **Data Source Confusion**: Current patient responses stored in `st.session_state.collected_answers` weren't properly passed to analysis agents
+
+## **Corrected Architecture in [main.py](mdc:main.py)**
+
+### **Data Flow Sequence**
+1. **Collection Phase**: `QuestionAsker` tool collects responses → `st.session_state.collected_answers`
+2. **Processing Phase**: Convert collected answers to JSON format
+3. **Agent Creation**: Pass current patient data to `create_agents(llm, current_patient_data)`
+4. **Task Creation**: Include patient data directly in task descriptions
+5. **Execution**: Crew processes with correct patient context
+
+### **Fixed Agent Creation**
+```python
+def create_agents(llm, current_patient_data=None):
+    # Research Agent - include current patient data if available
+    if current_patient_data:
+        ra_prompt = research_agent_prompt.format(
+            past_patient_qna=past_patient_qna, 
+            present_patient_qna=present_patient_qna,
+            current_patient_responses=current_patient_data
+        )
+```
+
+### **Fixed Task Creation**
+```python
+def create_tasks(qna_agent, research_agent, diagnostic_agent, critique_agent, presentation_agent, collected_patient_data):
+    collect_info_task = Task(
+        description=f"""
+        Process the following patient responses collected from the questionnaire:
+        
+        {collected_patient_data}
+        
+        Your task is to:
+        1. Review and validate the collected patient responses
+        ...
+```
+
+## **Research Agent Prompt Structure in [propmpts.py](mdc:propmpts.py)**
+
+### **Data Context Hierarchy**
+```
+## Historical Data Context
+Past patient responses (1 year ago): {past_patient_qna}
+Present patient responses (current): {present_patient_qna}
+CRITICAL: All patients in this dataset developed CKD within one year, making these patterns highly predictive.
+
+## Current Patient Data
+{current_patient_responses}
+
+## Your Assessment Process:
+### 1. Current Patient Analysis
+CRITICAL: Base your assessment ONLY on the Current Patient Data provided above. Use historical data for risk percentage calibration only.
+```
+
+### **Clear Data Boundaries**
+- **Historical Data**: Used for risk percentage calibration and pattern recognition
+- **Current Patient Data**: Primary source for individual risk assessment
+- **Medical Knowledge**: RAG search for guidelines and evidence
+
+## **Execution Flow Fix**
+
+### **Before (Incorrect)**
+```python
+# Create agents without current data
+qna_agent, research_agent, ... = create_agents(llm)
+
+# Create tasks without patient context
+tasks = create_tasks(agents..., "")
+
+# Set output after creation (too late)
+tasks[0].output = collected_answers_json
+```
+
+### **After (Correct)**
+```python
+# Prepare current patient data first
+collected_answers_json = json.dumps(st.session_state.collected_answers, indent=2)
+
+# Create agents WITH current patient data
+qna_agent, research_agent, ... = create_agents(llm, collected_answers_json)
+
+# Create tasks WITH patient context embedded
+tasks = create_tasks(agents..., collected_answers_json)
+```
+
+## **Data Sources and Usage**
+
+### **1. Current Patient Responses**
+- **Source**: `st.session_state.collected_answers` 
+- **Usage**: Primary assessment data for current patient
+- **Format**: JSON array of question-answer pairs
+- **Scope**: Individual risk assessment
+
+### **2. Historical Patient Data**
+- **Source**: `data/past_patient_responses.json`, `data/present_patient_responses.json`
+- **Usage**: Risk percentage calibration and pattern recognition
+- **Format**: JSON array of historical cases
+- **Scope**: Comparative analysis and risk benchmarking
+
+### **3. Medical Knowledge Base**
+- **Source**: Chroma vector store with KDIGO guidelines
+- **Usage**: Evidence-based risk factor validation
+- **Access**: `search_medical_knowledge` tool
+- **Scope**: Clinical guidelines and medical evidence
+
+## **Critical Requirements**
+
+### **Research Agent Analysis**
+1. **Primary Source**: Current patient responses ONLY
+2. **Historical Context**: For risk percentage calibration
+3. **Medical Evidence**: For factor validation and explanation
+4. **No Inference**: Base assessment only on explicit patient responses
+
+### **Data Integrity**
+- Current patient data must flow from UI collection to agent analysis
+- Historical data provides context but NOT primary assessment data
+- Medical knowledge provides evidence but NOT patient-specific data
+- Clear separation between data sources and their usage
+
+### **Validation Points**
+1. **Collection**: Verify all questions answered in `st.session_state.collected_answers`
+2. **Transfer**: Ensure current patient data passed to agent creation
+3. **Processing**: Confirm research agent uses current patient data as primary source
+4. **Output**: Validate assessment reflects actual patient responses
+
+## **Architecture Benefits**
+
+### **Data Accuracy**
+- Direct flow from patient responses to assessment
+- No loss or confusion of patient-specific data
+- Clear audit trail of data usage
+
+### **Assessment Reliability**
+- Research agent analyzes actual patient responses
+- Historical data provides proper context
+- Medical evidence supports factor explanations
+
+### **System Transparency**
+- Clear data sources for each component
+- Traceable assessment reasoning
+- Verifiable patient response usage
+
+This architecture ensures that patient responses collected through the UI directly drive the CKD risk assessment, with historical data and medical knowledge providing appropriate context and validation.

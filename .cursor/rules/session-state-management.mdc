@@ -1,0 +1,111 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Session State Management Best Practices
+
+## Critical Issue: Session State Caching
+The application previously had a critical bug where questions from [propmpts.py](mdc:propmpts.py) were cached in session state and never refreshed, even when the file was modified.
+
+## Fixed Pattern in [main.py](mdc:main.py)
+
+### Always Refresh Questions
+```python
+# OLD - WRONG PATTERN (causes caching issues)
+if "questions" not in st.session_state:
+    st.session_state.questions = parse_questions()  # Only runs once!
+
+# NEW - CORRECT PATTERN (detects changes)
+current_questions = [q.strip() for q in questions_list.strip().split('\n') if q.strip()]
+
+if ("questions" not in st.session_state or 
+    st.session_state.questions != current_questions):
+    
+    st.session_state.questions = current_questions
+    logger.info(f"Updated questions list with {len(st.session_state.questions)} questions")
+    
+    # Reset session if questions changed mid-session
+    if "questions" in st.session_state and st.session_state.current_question_index > 0:
+        logger.warning("Questions list changed mid-session - resetting QnA state")
+        reset_qna_session()
+```
+
+### Session Reset Mechanism
+The application now includes a manual reset button in the sidebar:
+
+```python
+if st.sidebar.button("🔄 Reset Session"):
+    keys_to_reset = [
+        "current_question_index", "collected_answers", "questions", 
+        "waiting_for_answer", "current_question", "latest_user_response", 
+        "crew_running", "messages"
+    ]
+    for key in keys_to_reset:
+        if key in st.session_state:
+            del st.session_state[key]
+```
+
+### Session State Validation
+Key validation patterns:
+
+#### Check for Data Consistency
+```python
+# Validate question count matches expectations
+if len(st.session_state.collected_answers) > len(st.session_state.questions):
+    logger.error("More answers than questions - resetting session")
+    reset_session()
+```
+
+#### Progress Tracking
+```python
+# Display current session status
+if "questions" in st.session_state:
+    st.sidebar.info(f"📋 Questions loaded: {len(st.session_state.questions)}")
+    progress = st.session_state.current_question_index / len(st.session_state.questions)
+    st.sidebar.progress(progress)
+```
+
+## Common Session Issues to Avoid
+
+### 1. Stale Data Caching
+- **Problem**: Session state persists between code changes
+- **Solution**: Always compare current data with cached data
+- **Pattern**: Use comparison checks before trusting cached values
+
+### 2. Incomplete Session Recovery
+- **Problem**: App crashes leave session in inconsistent state
+- **Solution**: Validate session state on startup
+- **Pattern**: Check all required keys exist and have valid values
+
+### 3. Question/Answer Mismatch
+- **Problem**: UI collects different questions than agents process
+- **Solution**: Use single source of truth for questions
+- **Pattern**: Always use `st.session_state.questions` consistently
+
+## Debugging Session Issues
+
+### Key Logging Points
+```python
+logger.info(f"Questions loaded: {len(st.session_state.questions)}")
+logger.info(f"Current question index: {st.session_state.current_question_index}")
+logger.info(f"Answers collected: {len(st.session_state.collected_answers)}")
+logger.info(f"Session state keys: {list(st.session_state.keys())}")
+```
+
+### Common Debug Commands
+- Check question count: `len(st.session_state.questions)`
+- Verify question content: `st.session_state.questions[0]` 
+- Check answer alignment: `len(st.session_state.collected_answers)`
+- Session reset: Use sidebar reset button
+
+## Best Practices
+
+1. **Never assume session state is fresh** - always validate on startup
+2. **Implement manual reset mechanisms** for development and user recovery
+3. **Log session state changes** for debugging
+4. **Compare cached data with source data** to detect changes
+5. **Provide visual feedback** on session status and progress
+6. **Handle mid-session changes gracefully** with automatic resets when needed
+
+This pattern ensures the UI and agents always work with the same, current question set from [propmpts.py](mdc:propmpts.py).

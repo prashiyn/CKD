@@ -1,0 +1,146 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Comprehensive Assessment Reporting
+
+## Overview
+The CKD assessment system provides comprehensive reports that include both a complete summary of all questions asked and detailed risk factor analysis.
+
+## Report Structure in [propmpts.py](mdc:propmpts.py)
+
+### 1. Executive Summary
+- Overall CKD risk percentage and category
+- Risk level classification (Low <25%, Moderate 25-60%, High >60%)
+- Confidence level in assessment
+
+### 2. Assessment Summary Table
+**Purpose**: Show ALL questions asked and patient responses for transparency and completeness.
+
+**Required Format**:
+```markdown
+| Question | Patient Response | Factor Status | Clinical Significance |
+|----------|------------------|---------------|----------------------|
+```
+
+**Requirements**:
+- Include EVERY question from the questionnaire, not just positive findings
+- Show the patient's exact response
+- Categorize each response as Present/Maybe/Not Present
+- Explain clinical significance for transparency
+
+### 3. Risk Factors Summary Table
+**Purpose**: Focus on identified risk factors and their contributions.
+
+**Required Format**:
+```markdown
+| Risk Factor | Status | Risk Contribution (%) | Impact Level | Key Recommendations |
+|-------------|--------|----------------------|--------------|---------------------|
+```
+
+## Implementation in [main.py](mdc:main.py)
+
+### Table Processing Enhancement
+The `process_markdown_tables()` function handles multiple tables:
+
+```python
+table_count = 0
+for i, part in enumerate(parts):
+    if part.strip().startswith('|') and '\n|' in part:
+        table_count += 1
+        if table_count == 1:
+            processed_content += f"\n\n**📋 Assessment Summary:**\n\n"
+        elif table_count == 2:
+            processed_content += f"\n\n**📊 Risk Factors Summary:**\n\n"
+        else:
+            processed_content += f"\n\n**📈 Additional Data:**\n\n"
+        processed_content += part.strip() + "\n\n"
+```
+
+### Table Identification
+- **First table**: Assessment Summary (all questions and responses)
+- **Second table**: Risk Factors Summary (identified risk factors only)
+- **Additional tables**: Generic data tables
+
+## Presentation Agent Requirements
+
+### Assessment Summary Specifications
+1. **Complete Coverage**: Every question from [propmpts.py](mdc:propmpts.py) questions_list
+2. **Exact Responses**: Patient's actual answers, not interpretations
+3. **Clinical Interpretation**: Present/Maybe/Not Present categorization
+4. **Educational Value**: Brief explanation of why each factor matters
+
+### Factor Status Classifications
+- **Present**: Clear indication of risk factor based on patient response
+- **Maybe**: Uncertain or intermittent presence of factor
+- **Not Present**: Factor clearly absent based on patient response
+
+### Clinical Significance Guidelines
+- Explain why each factor matters for CKD risk assessment
+- Keep explanations brief but informative
+- Use patient-friendly language
+- Connect to overall risk picture
+
+## Benefits of Comprehensive Reporting
+
+### For Patients
+- **Transparency**: See exactly what was assessed
+- **Understanding**: Learn why certain factors matter
+- **Validation**: Confirm their responses were understood correctly
+- **Education**: Understand the assessment process
+
+### For Healthcare Providers
+- **Complete Picture**: Full assessment documentation
+- **Decision Support**: Understand basis for risk calculation
+- **Follow-up Planning**: See all factors considered
+- **Quality Assurance**: Verify assessment completeness
+
+### For System Validation
+- **Audit Trail**: Complete record of assessment process
+- **Quality Control**: Ensure no questions are missed
+- **Accuracy Verification**: Compare responses to risk factors
+- **Process Improvement**: Identify assessment gaps
+
+## Table Formatting Best Practices
+
+### Markdown Table Requirements
+```markdown
+| Column1 | Column2 | Column3 | Column4 |
+|---------|---------|---------|---------|
+| Data1   | Data2   | Data3   | Data4   |
+```
+
+### Content Guidelines
+- **Concise Entries**: Keep table cells brief but informative
+- **Consistent Format**: Use same format for similar data types
+- **Clear Headers**: Self-explanatory column names
+- **Patient-Friendly**: Avoid medical jargon where possible
+
+### Visual Enhancement
+The `process_markdown_tables()` function adds visual indicators:
+- 📋 Assessment Summary (comprehensive question review)
+- 📊 Risk Factors Summary (focused risk analysis)
+- 📈 Additional Data (supplementary tables)
+
+## Validation Checklist
+
+### Assessment Summary Table
+- [ ] Includes ALL questions from questionnaire
+- [ ] Shows patient's exact responses
+- [ ] Categorizes each as Present/Maybe/Not Present
+- [ ] Provides clinical significance for each
+
+### Risk Factors Summary Table
+- [ ] Shows only identified risk factors
+- [ ] Includes risk contribution percentages
+- [ ] Categorizes impact levels
+- [ ] Provides specific recommendations
+
+### Overall Report
+- [ ] Both tables present and properly formatted
+- [ ] Content matches between tables where applicable
+- [ ] All sections follow numbered structure
+- [ ] Patient-friendly language throughout
+
+This comprehensive approach ensures complete transparency and educational value while maintaining clinical accuracy and usefulness for both patients and healthcare providers.

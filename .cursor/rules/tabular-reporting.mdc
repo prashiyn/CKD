@@ -1,0 +1,140 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Tabular Reporting for CKD Risk Assessment
+
+## Overview
+The CKD assessment system now generates structured tabular reports alongside narrative text to improve clarity and readability of risk factors and their contributions.
+
+## Implementation in [propmpts.py](mdc:propmpts.py)
+
+### Presentation Agent Requirements
+The presentation agent now MUST include a "Risk Factors Summary Table" with these exact columns:
+
+```markdown
+| Risk Factor | Status | Risk Contribution (%) | Impact Level | Key Recommendations |
+|-------------|--------|---------------------|--------------|-------------------|
+| High Blood Pressure | Present | 25% | High | Monitor daily, reduce sodium |
+| Kidney Disease History | Present | 30% | High | Regular follow-ups, medication compliance |
+| Decreased Appetite | Present | 8% | Low | Nutritional counseling, small frequent meals |
+```
+
+### Required Table Structure
+- **Risk Factor**: Patient-friendly names (not medical jargon)
+- **Status**: Present/Possibly Present/Not Present (based solely on patient responses)
+- **Risk Contribution (%)**: Individual percentage (e.g., "25%", "15%", "5%")
+- **Impact Level**: High (>20%) / Moderate (10-20%) / Low (<10%)
+- **Key Recommendations**: 1-2 specific, actionable steps
+
+## Implementation in [main.py](mdc:main.py)
+
+### Table Processing Function
+```python
+def process_markdown_tables(content):
+    """Process markdown content to enhance table display in Streamlit"""
+    import re
+    
+    # Find all markdown tables in the content
+    table_pattern = r'(\|[^\n]+\|(?:\n\|[^\n]+\|)*)'
+    tables = re.findall(table_pattern, content)
+    
+    if tables:
+        # Add visual enhancement for tables
+        processed_content = ""
+        for part in re.split(table_pattern, content):
+            if part.strip().startswith('|') and '\n|' in part:
+                processed_content += f"\n\n**📊 Risk Factors Summary:**\n\n"
+                processed_content += part.strip() + "\n\n"
+            else:
+                processed_content += part
+        return processed_content
+    
+    return content
+```
+
+### Usage in Result Display
+```python
+# Process and display result with enhanced table formatting
+processed_result = process_markdown_tables(result)
+
+with st.chat_message("assistant"):
+    st.markdown(processed_result)
+```
+
+## Agent Prompt Requirements
+
+### Research Agent Output Format
+Must provide structured data for each risk factor:
+- Clear factor identification
+- Specific percentage contributions
+- Evidence-based reasoning
+- Status determination based on patient responses
+
+### Presentation Agent Table Format
+- **MUST include markdown table** in section 2
+- Use proper markdown table syntax with headers and separators
+- Ensure all identified factors appear as table rows
+- Keep table entries concise but informative
+- Use consistent percentage format
+
+## Table Content Guidelines
+
+### Risk Factor Naming
+- Use patient-friendly terms
+- Avoid medical jargon
+- Be specific but clear
+- Examples: "High Blood Pressure" not "Hypertension"
+
+### Status Classification
+- **Present**: Patient clearly indicated factor exists
+- **Possibly Present**: Patient indicated "maybe" or unclear response
+- **Not Present**: Patient clearly indicated factor does not exist
+
+### Risk Contribution Guidelines
+- Base percentages on medical evidence and historical data
+- High-impact conditions (diabetes, hypertension): 20-50%
+- Progressive symptoms (hematuria, edema): 10-30%
+- Systemic symptoms (fatigue, nausea): 5-15%
+- Early indicators: 2-10%
+
+### Impact Level Classification
+```python
+if percentage > 20:
+    impact_level = "High"
+elif percentage >= 10:
+    impact_level = "Moderate"
+else:
+    impact_level = "Low"
+```
+
+## Quality Assurance
+
+### Table Validation
+- Verify all identified risk factors appear in table
+- Ensure percentages are consistent between table and detailed analysis
+- Check that status matches patient responses
+- Validate recommendations are actionable
+
+### Display Enhancement
+- Tables get visual highlighting with 📊 icon
+- Proper markdown rendering in Streamlit
+- Consistent formatting across all reports
+- Mobile-friendly table display
+
+## Benefits
+
+### For Patients
+- **Quick Overview**: Table provides at-a-glance summary
+- **Clear Priorities**: Impact levels help focus attention
+- **Actionable Steps**: Key recommendations column provides immediate guidance
+- **Easy Comparison**: Side-by-side factor comparison
+
+### For Healthcare Providers
+- **Structured Data**: Consistent format for review
+- **Evidence-Based**: Clear percentage contributions
+- **Comprehensive**: All factors in single view
+- **Actionable**: Specific recommendations for follow-up
+
+This tabular approach enhances the readability and usability of CKD risk assessments while maintaining comprehensive narrative explanations.

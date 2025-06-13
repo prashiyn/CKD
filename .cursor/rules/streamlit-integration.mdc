@@ -1,0 +1,106 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Streamlit Integration Patterns
+
+## Session State Management
+The application relies heavily on Streamlit session state for maintaining conversation flow and agent coordination as seen in [main.py](mdc:main.py).
+
+### Key Session State Variables
+```python
+# Core application state
+st.session_state.messages = []  # Chat history
+st.session_state.crew_running = False  # Crew execution state
+
+# QnA process state
+st.session_state.current_question_index = 0
+st.session_state.collected_answers = []
+st.session_state.questions = []  # Parsed from propmpts.py
+st.session_state.waiting_for_answer = False
+st.session_state.current_question = ""
+st.session_state.latest_user_response = ""
+
+# Optional features
+st.session_state.diagnostic_image = None  # Uploaded image
+```
+
+## Chat Interface Pattern
+```python
+# Display chat history
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# Handle user input
+if prompt := st.chat_input("Your message here"):
+    # Add to history and process
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    # Process and respond
+```
+
+## State Machine Pattern
+The application uses a complex state machine for managing the QnA flow:
+
+1. **Initial State**: `crew_running = False`, waiting for user input
+2. **QnA Active**: `crew_running = True`, `waiting_for_answer = True/False`
+3. **Processing**: All questions answered, running CrewAI agents
+4. **Complete**: Results displayed, `crew_running = False`
+
+## Image Upload Integration
+```python
+# Sidebar image upload
+uploaded_file = st.sidebar.file_uploader("Upload diagnostic images", type=["jpg", "jpeg", "png"])
+
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.sidebar.image(image, caption="Uploaded Diagnostic Image", use_column_width=True)
+    
+    # Store for agent processing
+    image_bytes = io.BytesIO()
+    image.save(image_bytes, format=image.format)
+    st.session_state.diagnostic_image = image_bytes.getvalue()
+```
+
+## Conditional Rendering
+Use conditional rendering based on session state:
+
+```python
+if not st.session_state.crew_running and prompt:
+    # Start new session
+elif st.session_state.crew_running and st.session_state.waiting_for_answer:
+    # Show current question and wait for answer
+elif st.session_state.crew_running and questions_complete:
+    # Run CrewAI agents
+elif not st.session_state.waiting_for_answer:
+    # Ask next question
+```
+
+## Rerun Management
+Use `st.rerun()` strategically to update the UI after state changes:
+- After collecting an answer
+- When moving to the next question
+- After completing the QnA process
+
+## Configuration Sidebar
+```python
+st.sidebar.title("Configuration")
+llm_provider = st.sidebar.selectbox("Select LLM Provider", ["groq", "openai"])
+
+if llm_provider == "groq":
+    groq_model = st.sidebar.selectbox("Select Groq Model", ["llama", "deepseek", "mistral"])
+```
+
+## Error Handling in UI
+- Use `st.spinner()` for long-running operations
+- Display errors with `st.error()`
+- Use `st.success()` for confirmations
+- Implement debug expandable sections for troubleshooting
+
+## Best Practices
+- Always check session state initialization
+- Use clear naming conventions for session state keys
+- Implement proper cleanup when resetting state
+- Handle page refreshes gracefully
+- Provide visual feedback for all user actions

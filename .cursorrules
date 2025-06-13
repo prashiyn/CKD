@@ -1,0 +1,26 @@
+This is a multi agent and rag project written in python. This for prediction of chronic kidney disease
+and for the prediction of the severity of the disease. We will use a combination of a multi agent and a rag to predict and answer the questions. 
+
+The project is a web application that allows users to ask questions about a set of documents.
+
+The project uses a combination of a multi agent and a rag to answer questions.
+
+We will use the following technologies
+- Python
+- Flask
+- Langchain
+- ChromaDB
+- OpenAI
+- Pinecone
+- crewAi
+
+
+We will create a simple streamlit app to test the project.
+
+We will use the following tools:
+- crewAi
+- Langchain
+- ChromaDB
+- OpenAI
+
+We will use openai and groq for the LLM. 

@@ -1,0 +1,45 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# CKD Project Structure and Architecture
+
+## Project Overview
+This is a multi-agent chronic kidney disease (CKD) prediction system that combines RAG (Retrieval Augmented Generation) with CrewAI agents to assess patient risk and provide recommendations.
+
+## Key Files
+- [main.py](mdc:main.py) - Main Streamlit application with UI and agent orchestration
+- [propmpts.py](mdc:propmpts.py) - Contains all agent prompts and question lists
+- [models.py](mdc:models.py) - Data models for patient information
+- `.env` - Environment variables for API keys (OPENAI_API_KEY, GROQ_API_KEY)
+
+## Technology Stack
+- **Frontend**: Streamlit for web interface
+- **Multi-Agent Framework**: CrewAI for agent orchestration
+- **LLM Integration**: OpenAI GPT-4o and Groq models (Llama, DeepSeek, Mistral)
+- **Vector Database**: ChromaDB with OpenAI embeddings
+- **Document Processing**: LangChain for PDF loading and text splitting
+- **RAG Implementation**: LangChain + ChromaDB for knowledge retrieval
+
+## Agent Architecture
+The system uses 5 specialized agents in sequential processing:
+
+1. **QnA Agent** - Collects patient information through structured questionnaire
+2. **Diagnostic Agent** - Analyzes patient responses and diagnostic images
+3. **Research Agent** - Assesses CKD risk using historical patient data and medical knowledge
+4. **Critique Agent** - Reviews and validates the risk assessment
+5. **Presentation Agent** - Formats final results for user-friendly presentation
+
+## Data Flow
+1. Patient answers 22 medical questions via Streamlit interface
+2. Answers collected in JSON format and stored in session state
+3. Sequential agent processing with dependency management
+4. Final presentation of CKD risk assessment and recommendations
+
+## Key Patterns
+- Session state management for question tracking and answer collection
+- CrewAI task dependencies using sequential processing
+- RAG integration for medical knowledge search
+- Image upload support for diagnostic analysis
+- Comprehensive logging for debugging and monitoring

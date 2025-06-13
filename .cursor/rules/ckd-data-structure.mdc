@@ -1,0 +1,56 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# CKD Data Structure and Reference Materials
+
+## Data Directory Structure
+The [data](mdc:data) directory contains critical reference materials for CKD assessment:
+
+### Medical Guidelines
+- [KDIGO-2024-CKD-Guideline.pdf](mdc:data/KDIGO-2024-CKD-Guideline.pdf) - Primary CKD clinical guidelines
+- [KDIGO-2024-CKD-Guideline-Top-10-Takeaways-for-Nephrologists-Evaluation.pdf](mdc:data/KDIGO-2024-CKD-Guideline-Top-10-Takeaways-for-Nephrologists-Evaluation.pdf) - Specialist evaluation guidelines
+- [KDIGO-2024-CKD-Guideline-Top-10-Takeaways-for-PCPs-Evaluation.pdf](mdc:data/KDIGO-2024-CKD-Guideline-Top-10-Takeaways-for-PCPs-Evaluation.pdf) - Primary care evaluation guidelines
+- [ckd_info.txt](mdc:data/ckd_info.txt) - Supplementary CKD information
+
+### Historical Patient Data
+- [past_patient_responses.json](mdc:data/past_patient_responses.json) - Patient responses from one year ago (193KB, 7535 lines)
+- [present_patient_responses.json](mdc:data/present_patient_responses.json) - Current patient responses (193KB, 7535 lines)
+
+**Critical Note**: All patients in this dataset developed CKD within one year, making this data essential for risk factor identification and trend analysis.
+
+## Risk Factors Structure
+Based on the questions in [propmpts.py](mdc:propmpts.py), the assessment should evaluate:
+
+### Demographics
+- Age, Gender
+
+### Medical Conditions (High Impact)
+- Hypertension (high blood pressure)
+- Type 1 Diabetes
+- Type 2 Diabetes  
+- Cardiovascular disease
+
+### Symptoms (Progressive Indicators)
+- Appetite changes
+- Pedal edema (swelling)
+- Hematuria (blood in urine)
+- Nocturia (frequent nighttime urination)
+- Flank discomfort
+- Decreased urine output
+- Fatigue
+- Nausea/vomiting
+- Metallic taste
+- Unintended weight loss
+- Persistent itching
+- Mental state changes
+- Breathing difficulty
+
+## Risk Assessment Requirements
+Each factor must include:
+1. **Presence Assessment**: Based solely on patient responses
+2. **Risk Percentage**: Individual contribution to overall CKD risk
+3. **Detailed Explanation**: Why this factor increases risk
+4. **Evidence Source**: Reference to KDIGO guidelines or historical data patterns
+5. **Actionable Recommendations**: Specific steps for the patient

@@ -1,0 +1,49 @@
+Chronic Kidney Disease (CKD) is a condition characterized by a gradual loss of kidney function over time. The kidneys filter wastes and excess fluids from the blood, which are then excreted in the urine. When chronic kidney disease reaches an advanced stage, dangerous levels of fluid, electrolytes, and wastes can build up in the body.
+
+Risk factors for CKD include:
+- Diabetes
+- High blood pressure
+- Heart disease
+- Family history of kidney failure
+- Age over 60
+- Obesity
+- Smoking
+- Race/ethnicity (African Americans, Hispanics, Native Americans)
+
+Symptoms of CKD may include:
+- Nausea and vomiting
+- Loss of appetite
+- Fatigue and weakness
+- Sleep problems
+- Changes in urine output
+- Decreased mental sharpness
+- Muscle twitches and cramps
+- Swelling of feet and ankles
+- Persistent itching
+- Chest pain (if fluid builds up around the lining of the heart)
+- Shortness of breath (if fluid builds up in the lungs)
+- High blood pressure that's difficult to control
+
+CKD is diagnosed using:
+- Blood tests (eGFR - estimated glomerular filtration rate)
+- Urine tests (albumin-to-creatinine ratio)
+- Imaging tests
+- Kidney biopsy
+
+CKD is classified into five stages based on eGFR:
+- Stage 1: eGFR ≥ 90 mL/min/1.73m² (Normal kidney function but with other evidence of kidney damage)
+- Stage 2: eGFR 60-89 mL/min/1.73m² (Mild decrease in kidney function)
+- Stage 3a: eGFR 45-59 mL/min/1.73m² (Mild to moderate decrease in kidney function)
+- Stage 3b: eGFR 30-44 mL/min/1.73m² (Moderate to severe decrease in kidney function)
+- Stage 4: eGFR 15-29 mL/min/1.73m² (Severe decrease in kidney function)
+- Stage 5: eGFR < 15 mL/min/1.73m² (Kidney failure)
+
+Treatment for CKD focuses on slowing the progression of kidney damage, usually by controlling the underlying cause. Depending on the cause, this might include:
+- Controlling blood pressure
+- Managing blood sugar levels
+- Reducing cholesterol levels
+- Taking medications to protect the kidneys
+- Making lifestyle changes such as quitting smoking, maintaining a healthy weight, and being physically active
+- Following a kidney-friendly diet
+
+End-stage kidney disease, the final stage of CKD, requires dialysis or a kidney transplant. 

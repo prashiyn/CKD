@@ -1,0 +1,66 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# CrewAI Patterns and Best Practices
+
+## Task Creation and Dependencies
+When creating CrewAI tasks, follow these patterns from [main.py](mdc:main.py):
+
+### Correct Task Structure
+```python
+task = Task(
+    description="Clear description of what the task should do",
+    agent=agent_instance,
+    dependencies=[previous_task],  # List of dependent tasks
+    expected_output="Description of expected output format"
+    # DO NOT add context={} - this causes validation errors
+)
+```
+
+### Common Errors to Avoid
+- **Context Validation Error**: Never initialize `context={}` in Task constructor - CrewAI expects context to be a list, not a dict
+- **String Output Attribute Error**: Don't manually set task.output as a string - let CrewAI handle task outputs through dependencies
+- **Incorrect Context References**: Use proper CrewAI dependency syntax instead of manual context manipulation
+
+### Dependency Management
+```python
+# Correct way - let CrewAI handle dependencies automatically
+tasks = [task1, task2, task3, task4, task5]
+task2.dependencies = [task1]
+task3.dependencies = [task1, task2]
+task4.dependencies = [task3]
+task5.dependencies = [task4]
+```
+
+## Agent Configuration
+Agents should be configured with:
+- Clear role and goal definitions
+- Appropriate backstory from [propmpts.py](mdc:propmpts.py)
+- `verbose=True` for debugging
+- Specific tools when needed
+
+## Crew Setup
+```python
+crew = Crew(
+    agents=agent_list,
+    tasks=task_list,
+    verbose=True,
+    process=Process.sequential,  # Use sequential for dependent tasks
+    memory=True  # Enable memory for better context retention
+)
+```
+
+## Session State Integration
+For Streamlit integration, use session state to:
+- Track crew execution state
+- Store intermediate results
+- Manage question/answer flow
+- Handle task outputs manually when needed
+
+## Error Handling
+- Always check task dependencies before execution
+- Use try/catch blocks around crew.kickoff()
+- Implement proper logging for debugging
+- Validate task outputs before passing to dependent tasks

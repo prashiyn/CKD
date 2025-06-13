@@ -1,0 +1,156 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Single Chat Input Pattern
+
+## Problem
+Creating multiple `st.chat_input()` widgets in different conditional blocks causes UI issues:
+- Multiple chat boxes appear simultaneously
+- First chat box becomes dysfunctional 
+- Second chat box becomes active
+- Confusing user experience
+
+## Root Cause in [main.py](mdc:main.py)
+The original implementation created separate chat inputs:
+```python
+# First chat input
+prompt = st.chat_input("Ask about chronic kidney disease...")
+
+# Second chat input (in different condition)
+user_response = st.chat_input("Your answer:")
+```
+
+Both widgets exist in the same render cycle, causing dual chat box behavior.
+
+## Solution: Single Dynamic Chat Input
+
+### Implementation Pattern
+```python
+# Dynamic chat input based on state
+if not st.session_state.crew_running:
+    chat_prompt = "Ask about chronic kidney disease..."
+elif st.session_state.waiting_for_answer:
+    chat_prompt = "Your answer:"
+else:
+    chat_prompt = "Please wait..."
+
+# Single chat input that changes based on state
+user_input = st.chat_input(chat_prompt)
+```
+
+### State-Based Logic
+```python
+# Handle different input types with single variable
+if not st.session_state.crew_running and user_input:
+    # Handle initial query
+    process_initial_query(user_input)
+elif st.session_state.waiting_for_answer and user_input:
+    # Handle QnA responses
+    process_qna_response(user_input)
+```
+
+## Benefits
+
+### User Experience
+- **Single Chat Box**: Only one input field visible at any time
+- **Clear Context**: Prompt text changes to indicate expected input
+- **Consistent Behavior**: Same input field for all interactions
+- **No UI Confusion**: Eliminates dysfunctional chat boxes
+
+### Code Maintainability
+- **Single Source**: One chat input widget to manage
+- **State-Driven**: Behavior controlled by application state
+- **Simplified Logic**: No multiple chat input conditions
+- **Clear Flow**: Single variable (`user_input`) for all user inputs
+
+## Implementation Guidelines
+
+### 1. State-Based Prompts
+Define prompt text based on application state:
+```python
+if condition_1:
+    chat_prompt = "Prompt for state 1"
+elif condition_2:
+    chat_prompt = "Prompt for state 2"
+else:
+    chat_prompt = "Default prompt"
+```
+
+### 2. Single Input Variable
+Use one variable for all user inputs:
+```python
+user_input = st.chat_input(chat_prompt)
+```
+
+### 3. Conditional Processing
+Handle different input types with clear conditions:
+```python
+if state_1 and user_input:
+    # Handle state 1 input
+elif state_2 and user_input:
+    # Handle state 2 input
+```
+
+### 4. Consistent Variable Usage
+Use the same input variable throughout:
+```python
+# Store response
+st.session_state.latest_response = user_input
+
+# Add to chat history
+st.session_state.messages.append({"content": user_input})
+
+# Display message
+st.markdown(user_input)
+```
+
+## Anti-Patterns to Avoid
+
+### Multiple Chat Inputs
+```python
+# DON'T: Multiple chat inputs
+if condition_1:
+    input1 = st.chat_input("Prompt 1")
+if condition_2:
+    input2 = st.chat_input("Prompt 2")
+```
+
+### Inconsistent Variables
+```python
+# DON'T: Different variable names
+prompt = st.chat_input("...")  # First usage
+user_response = st.chat_input("...")  # Second usage
+```
+
+### Overlapping Conditions
+```python
+# DON'T: Conditions that can be true simultaneously
+if not some_state:
+    input1 = st.chat_input("...")
+if other_condition:
+    input2 = st.chat_input("...")
+```
+
+## Testing Checklist
+
+### UI Behavior
+- [ ] Only one chat input visible at any time
+- [ ] Chat input prompt changes appropriately with state
+- [ ] No dysfunctional chat boxes appear
+- [ ] Input field remains functional throughout session
+
+### State Management
+- [ ] Application state correctly determines prompt text
+- [ ] User input properly triggers state transitions
+- [ ] Input processing matches current application state
+- [ ] Session state updates correctly after input
+
+### User Experience
+- [ ] Clear indication of expected input type
+- [ ] Smooth transitions between different input modes
+- [ ] Consistent chat interface behavior
+- [ ] No UI confusion or multiple input fields
+
+This pattern ensures a clean, functional chat interface that adapts to application state without creating multiple conflicting input widgets.

@@ -1,0 +1,78 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Debugging and Logging Patterns
+
+## Logging Configuration
+The project uses comprehensive logging as implemented in [main.py](mdc:main.py):
+
+```python
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('ckd_app.log'),  # File logging
+        logging.StreamHandler()              # Console logging
+    ]
+)
+logger = logging.getLogger(__name__)
+```
+
+## QnA Process Logging
+Critical logging points for the question/answer flow:
+
+### Session State Initialization
+```python
+logger.info("Initialized current_question_index to 0")
+logger.info("Initialized collected_answers as empty list")
+logger.info(f"Parsed {len(st.session_state.questions)} questions from questions_list")
+```
+
+### Question Flow Tracking
+```python
+logger.info(f"QuestionAsker._run called - waiting_for_answer: {st.session_state.waiting_for_answer}, current_question_index: {st.session_state.current_question_index}")
+logger.info(f"Asking question #{st.session_state.current_question_index + 1}: {question}")
+logger.info(f"Received patient response: {response}")
+logger.info(f"Stored answer #{len(st.session_state.collected_answers)}: {answer_data}")
+```
+
+### Final JSON Output
+```python
+final_json = json.dumps(st.session_state.collected_answers, indent=2)
+logger.info("All questions completed!")
+logger.info(f"Final collected answers JSON:\n{final_json}")
+logger.info(f"Total answers collected: {len(st.session_state.collected_answers)}")
+```
+
+## Debug UI Elements
+Use Streamlit expanders for runtime debugging:
+
+```python
+with st.expander("DEBUG: View Collected QnA Data", expanded=False):
+    st.json(st.session_state.collected_answers)
+    st.text(f"Total questions answered: {len(st.session_state.collected_answers)}")
+```
+
+## Common Debug Scenarios
+1. **Task Dependency Issues**: Check task.output attributes and dependency chains
+2. **Session State Problems**: Log all session state changes
+3. **Agent Communication**: Log agent inputs/outputs and tool usage
+4. **JSON Formation**: Log the complete JSON structure before passing to agents
+5. **CrewAI Errors**: Log crew configuration and task definitions
+
+## Error Patterns to Watch
+- `AttributeError: 'str' object has no attribute 'output'` - Task dependency issue
+- `ValidationError: context Input should be a valid list` - Task context configuration error
+- Session state not persisting - Streamlit rerun issues
+- Agent tool failures - Check tool configurations and inputs
+
+## Best Practices
+- Log at INFO level for normal flow tracking
+- Use DEBUG level for detailed variable dumps
+- Log before and after critical operations
+- Include context in log messages (question numbers, session state values)
+- Use structured logging for JSON data

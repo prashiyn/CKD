@@ -1,0 +1,158 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# CrewAI Output Handling
+
+## Issue
+CrewAI returns `CrewOutput` objects instead of plain strings, which can cause TypeErrors when functions expect string inputs.
+
+## Problem Example
+```python
+# This causes TypeError: expected string or bytes-like object, got 'CrewOutput'
+result = crew.kickoff()  # Returns CrewOutput object
+re.findall(pattern, result)  # Error - regex expects string
+```
+
+## Solution Pattern in [main.py](mdc:main.py)
+
+### CrewOutput Detection and Conversion
+```python
+def process_markdown_tables(content):
+    """Process markdown content to enhance table display in Streamlit"""
+    import re
+    
+    # Handle CrewOutput object - convert to string
+    if hasattr(content, 'raw') and hasattr(content, 'pydantic_output'):
+        # CrewOutput object - extract the string content
+        content_str = str(content.raw) if content.raw else str(content)
+        logger.info("Converted CrewOutput to string for table processing")
+    elif hasattr(content, '__str__'):
+        # Any object with string representation
+        content_str = str(content)
+    else:
+        # Already a string
+        content_str = content
+    
+    # Now use content_str for string operations
+    tables = re.findall(table_pattern, content_str)
+```
+
+### CrewOutput Structure
+CrewAI's `CrewOutput` object typically contains:
+- **`raw`**: The main output content as string
+- **`pydantic_output`**: Structured data if using Pydantic models
+- **Other metadata**: Execution details, agent information, etc.
+
+### Best Practices
+
+#### 1. Always Check Object Type
+```python
+# Check if it's a CrewOutput object
+if hasattr(result, 'raw'):
+    content = str(result.raw)
+else:
+    content = str(result)
+```
+
+#### 2. Safe String Conversion
+```python
+# Robust conversion that handles various object types
+def safe_string_conversion(obj):
+    if hasattr(obj, 'raw') and obj.raw:
+        return str(obj.raw)
+    elif hasattr(obj, '__str__'):
+        return str(obj)
+    else:
+        return ""
+```
+
+#### 3. Logging for Debugging
+```python
+# Log object type and content for debugging
+logger.info(f"Result type: {type(result)}")
+if hasattr(result, 'raw'):
+    logger.info(f"CrewOutput.raw length: {len(str(result.raw))}")
+```
+
+## Common Patterns
+
+### String Operations
+```python
+# Wrong - may fail with CrewOutput
+text_length = len(result)
+
+# Right - handle CrewOutput
+text_length = len(str(result.raw) if hasattr(result, 'raw') else str(result))
+```
+
+### Regular Expressions
+```python
+# Wrong - regex expects string
+matches = re.findall(pattern, result)
+
+# Right - convert first
+content_str = str(result.raw) if hasattr(result, 'raw') else str(result)
+matches = re.findall(pattern, content_str)
+```
+
+### Chat History Storage
+```python
+# Wrong - storing object in chat history
+st.session_state.messages.append({"role": "assistant", "content": result})
+
+# Right - convert to string
+result_str = str(result.raw) if hasattr(result, 'raw') else str(result)
+st.session_state.messages.append({"role": "assistant", "content": result_str})
+```
+
+## Implementation in CKD Application
+
+### Table Processing
+The `process_markdown_tables()` function now handles CrewOutput objects by:
+1. Detecting CrewOutput using `hasattr(content, 'raw')`
+2. Extracting string content from the `raw` attribute
+3. Falling back to `str()` conversion for other objects
+4. Using the string content for all subsequent operations
+
+### Result Display
+```python
+# Process result for display
+processed_result = process_markdown_tables(result)  # Handles CrewOutput
+
+# Store in chat history as string
+result_str = str(result.raw) if hasattr(result, 'raw') else str(result)
+st.session_state.messages.append({"role": "assistant", "content": result_str})
+```
+
+## Error Prevention
+
+### Common Errors
+- `TypeError: expected string or bytes-like object, got 'CrewOutput'`
+- `AttributeError: 'CrewOutput' object has no attribute 'lower'`
+- String method failures on CrewOutput objects
+
+### Prevention Strategy
+1. **Always convert CrewOutput to string** before string operations
+2. **Use defensive programming** with `hasattr()` checks
+3. **Log object types** during development for debugging
+4. **Test with both string and CrewOutput inputs** in functions
+
+## Testing
+```python
+# Test function with both input types
+def test_function():
+    # Test with string
+    result = process_function("test string")
+    
+    # Test with mock CrewOutput
+    class MockCrewOutput:
+        def __init__(self, raw_content):
+            self.raw = raw_content
+    
+    crew_output = MockCrewOutput("test string")
+    result = process_function(crew_output)
+```
+
+This pattern ensures robust handling of CrewAI outputs throughout the application, preventing TypeErrors and ensuring consistent string processing.
