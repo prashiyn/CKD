@@ -1,0 +1,20 @@
+bucket,risk_level,scenario_desc,simulation_number,question_number,question,response
+High1,High,Classic full-risk,1,1,What is your gender?,I am male
+High1,High,Classic full-risk,1,2,What is your current age?,I'm 52 years old
+High1,High,Classic full-risk,1,3,Do you have high blood pressure (hypertension)?,yes
+High1,High,Classic full-risk,1,4,Do you have Type 1 diabetes?,no
+High1,High,Classic full-risk,1,5,Do you have Type 2 diabetes?,yes
+High1,High,Classic full-risk,1,6,Do you have any cardiovascular disease?,yes
+High1,High,Classic full-risk,1,7,Have you noticed any changes in your appetite?,decreased
+High1,High,Classic full-risk,1,8,Do you have swelling in your feet and ankles (pedal edema)?,yes
+High1,High,Classic full-risk,1,9,Have you noticed blood in your urine (hematuria)?,yes
+High1,High,Classic full-risk,1,10,Do you wake up frequently at night to urinate (nocturia)?,yes
+High1,High,Classic full-risk,1,11,Do you experience pain in your side or back (flank discomfort)?,yes
+High1,High,Classic full-risk,1,12,Have you noticed a decrease in your urine output?,yes
+High1,High,Classic full-risk,1,13,Do you feel unusually tired or weak (fatigue)?,yes
+High1,High,Classic full-risk,1,14,Do you experience nausea or vomiting?,yes
+High1,High,Classic full-risk,1,15,Do you have a metallic taste in your mouth?,yes
+High1,High,Classic full-risk,1,16,Have you lost weight unintentionally?,yes
+High1,High,Classic full-risk,1,17,Do you experience persistent itching?,yes
+High1,High,Classic full-risk,1,18,Have you noticed any changes in your mental state?,confusion
+High1,High,Classic full-risk,1,19,Do you have difficulty breathing?,yes

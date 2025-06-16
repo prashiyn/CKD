@@ -1,0 +1,41 @@
+bucket,risk_level,age,gender,t1d,t2d,hypertension,cardiovascular,fatigue,pedal_edema,scenario_desc
+High1,High,68,F,Y,N,Y,Y,Y,Y,Classic full-risk
+High2,High,72,M,N,Y,Y,Y,Y,Y,Elderly metabolic
+High3,High,65,F,Y,N,N,Y,Y,N,T1D + CVD
+High4,High,75,M,N,Y,Y,N,Y,Y,HTN + T2D
+High5,High,70,F,Y,Y,Y,Y,Y,Y,Multimorbid
+High6,High,66,M,N,Y,Y,Y,Y,Y,All 3 risks
+High7,High,80,F,N,N,Y,Y,Y,Y,CVD+HTN + Age
+High8,High,69,M,Y,N,Y,N,Y,Y,T1D + HTN
+High9,High,73,F,N,Y,N,Y,Y,N,T2D + CVD
+High10,High,76,M,Y,Y,Y,Y,Y,Y,Highest complexity
+Medium1,Medium,55,F,N,Y,Y,N,Y,N,Metabolic risk
+Medium2,Medium,60,M,Y,N,N,N,Y,N,Age + T1D
+Medium3,Medium,58,F,N,N,Y,N,N,N,Isolated HTN
+Medium4,Medium,62,M,N,Y,N,N,Y,N,T2D only
+Medium5,Medium,59,F,Y,N,N,Y,Y,N,T1D + CVD
+Medium6,Medium,61,M,N,N,Y,Y,Y,N,HTN + CVD
+Medium7,Medium,52,F,N,Y,Y,N,N,N,T2D + HTN
+Medium8,Medium,57,M,Y,N,N,N,N,N,T1D mid-age
+Medium9,Medium,63,F,N,N,Y,N,Y,N,Elderly HTN
+Medium10,Medium,55,M,N,Y,N,N,N,N,"T2D, mid-age"
+Low1,Low,40,F,N,N,Y,N,N,N,Mild HTN
+Low2,Low,35,M,N,Y,N,N,N,N,T2D early
+Low3,Low,38,F,Y,N,N,N,N,N,"T1D, young"
+Low4,Low,45,M,N,N,Y,N,N,N,Mid-age HTN
+Low5,Low,42,F,N,N,N,Y,N,N,Early CVD
+Low6,Low,39,M,N,Y,Y,N,N,N,"T2D + HTN, young"
+Low7,Low,43,F,Y,N,Y,N,N,N,T1D + HTN
+Low8,Low,37,M,N,N,Y,Y,N,N,HTN + CVD
+Low9,Low,44,F,N,N,N,Y,N,N,Mild CVD
+Low10,Low,41,M,N,Y,N,N,N,N,T2D alone
+None1,None,25,F,N,N,N,N,N,N,Healthy young
+None2,None,30,M,N,N,N,N,N,N,Control male
+None3,None,28,F,N,N,N,N,N,N,Ideal profile
+None4,None,22,M,N,N,N,N,N,N,No comorbidities
+None5,None,35,F,N,N,N,N,N,N,Healthy adult
+None6,None,31,M,N,N,N,N,N,N,No symptoms
+None7,None,26,F,N,N,N,N,N,N,Young control
+None8,None,29,M,N,N,N,N,N,N,No risk
+None9,None,33,F,N,N,N,N,N,N,No fatigue/edema
+None10,None,24,M,N,N,N,N,N,N,Clean baseline

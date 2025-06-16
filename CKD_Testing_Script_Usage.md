@@ -68,6 +68,7 @@ python scripts.py --scenario "60 year old with kidney problems" --llm_provider o
 ```bash
 python scripts.py --scenario "30 year old with chest pain" --output_dir "test_results"
 ```
+For number of simulations add --num_simulations 10
 
 ### Command Line Arguments
 
@@ -78,6 +79,8 @@ python scripts.py --scenario "30 year old with chest pain" --output_dir "test_re
 | `--llm_provider` | choice | `groq` | LLM provider (`groq` or `openai`) |
 | `--model` | choice | `llama` | Groq model (`llama`, `deepseek`, `mistral`) |
 | `--output_dir` | string | `output` | Directory to save results |
+| `--num_simulations` | integer | `1` | Number of simulations to run |
+| `--analyze` | flag | `False` | Run analysis on consolidated results |
 
 ### Response Types
 
@@ -145,29 +148,37 @@ Each test generates a markdown file with this structure:
 3. **Patient Responses Summary** - QnA table with all questions and answers
 4. **Assessment Results** - Complete output from the presentation agent
 
-### Sample Output Structure
-```markdown
-# CKD Assessment Report
+### Consolidated Analysis Reports
 
-## Test Scenario
-**Patient Description:** 25 year old male with high blood pressure
-**Assessment Date:** 2024-01-15T10:30:45
-**Processing Time:** 45.2 seconds
+When running multiple simulations with `--analyze`, the script generates three CSV files:
 
-## Configuration
-- **LLM Provider:** groq
-- **Total Agents:** 5
+**Filename Format:** `analysis_{scenario}_{timestamp}_{type}.csv`
 
-## Patient Responses Summary
-| Question | Patient Response |
-|----------|------------------|
-| What is your gender? | male |
-| What is your current age? | 25 |
-| Do you have high blood pressure? | yes |
-...
+**File Types:**
+1. **Risk Score Statistics** (`*_risk_score_stats.csv`)
+   - Mean, standard deviation, min, max, median of risk scores
+   - Confidence level statistics
 
-## Assessment Results
-[Complete formatted assessment from presentation agent]
+2. **Risk Factor Analysis** (`*_risk_factor_stats.csv`)
+   - Distribution of risk factors across simulations
+   - Percentage breakdown of contributing factors
+
+3. **Response Analysis** (`*_response_stats.csv`)
+   - Statistical analysis of patient responses
+   - Response patterns and correlations
+
+**Sample Usage:**
+```bash
+# Run 5 simulations with analysis
+python scripts.py --scenario "60 year old female" --num_simulations 5 --analyze
+```
+
+**Output Structure:**
+```
+output/
+├── ckd_assessment_*.md           # Individual reports
+├── consolidated_*.csv           # Raw simulation data
+└── analysis_*.csv               # Analysis results
 ```
 
 ## Testing Workflow
@@ -177,13 +188,9 @@ The script follows this automated workflow:
 1. **Scenario Input** → Patient description provided
 2. **Question Parsing** → Extracts questions from `propmpts.py`
 3. **Response Generation** → LLM generates patient answers
-4. **Agent Pipeline** → Runs 5-agent assessment workflow:
-   - QnA Agent: Validates responses
-   - Diagnostic Agent: Analyzes symptoms
-   - Research Agent: Calculates risk factors
-   - Critique Agent: Reviews assessment
-   - Presentation Agent: Creates final report
+4. **Agent Pipeline** → Runs 5-agent assessment workflow
 5. **Export** → Saves markdown report to output directory
+6. **Analysis** → (if `--analyze`) Generates statistical analysis of results
 
 ## Error Handling
 
@@ -257,10 +264,21 @@ python scripts.py --scenario "complex patient with diabetes, heart disease, and 
 python scripts.py --scenario "25 year old with severe symptoms suggesting advanced kidney disease"
 ```
 
-### Integration with CI/CD
+### Multiple Simulations with Analysis
 
-The script can be integrated into automated testing pipelines:
+**Basic Analysis:**
+```bash
+# Run 10 simulations with analysis
+python scripts.py --scenario "45 year old diabetic" --num_simulations 10 --analyze
+```
 
+**Custom Output Directory:**
+```bash
+# Run analysis in custom directory
+python scripts.py --scenario "60 year old with hypertension" --num_simulations 5 --analyze --output_dir "analysis_results"
+```
+
+**Integration with CI/CD:**
 ```bash
 #!/bin/bash
 # test_scenarios.sh
@@ -272,22 +290,23 @@ scenarios=(
 )
 
 for scenario in "${scenarios[@]}"; do
-    python scripts.py --scenario "$scenario" --output_dir "ci_results"
+    python scripts.py --scenario "$scenario" --num_simulations 5 --analyze --output_dir "ci_results"
     if [ $? -ne 0 ]; then
         echo "Test failed for: $scenario"
         exit 1
     fi
 done
 
-echo "All tests passed!"
+echo "All tests completed with analysis!"
 ```
 
 ## Performance Considerations
 
 - **Processing Time**: Each assessment takes 30-60 seconds depending on LLM provider
+- **Analysis Time**: Additional 5-10 seconds per simulation batch
 - **API Costs**: Consider rate limits and costs when running multiple tests
 - **Memory Usage**: Vector store initialization requires ~500MB RAM
-- **File Storage**: Each report is typically 5-20KB
+- **File Storage**: Each report is typically 5-20KB, analysis files ~1-5KB
 
 ## Troubleshooting
 
@@ -324,3 +343,142 @@ For issues or questions:
 2. Verify all dependencies are installed
 3. Ensure API keys are valid and have sufficient credits
 4. Review this documentation for common solutions 
+
+## Scenario Testing Script Usage
+
+The `scenario_testing.py` script extends the testing capabilities by running multiple simulations across predefined scenarios from a CSV file. This is particularly useful for systematic testing of different patient profiles and risk levels.
+
+### Features
+
+- **CSV-based Scenario Management**: Loads test scenarios from a structured CSV file
+- **Multiple Simulations per Scenario**: Runs configurable number of simulations while maintaining core parameters
+- **Scenario-specific Output Organization**: Creates separate directories for each scenario's results
+- **Comprehensive Analysis**: Generates consolidated reports and statistical analysis for each scenario
+- **Metadata-rich Outputs**: Includes scenario parameters in all analysis files
+
+### Directory Structure
+
+The script expects this structure:
+```
+ckd/
+├── scenario_testing.py
+├── scripts.py
+├── scenarios/
+│   └── ckd_scenarios.csv
+└── output/
+    └── scenarios/
+        ├── scenario_1/
+        │   ├── ckd_assessment_*.md
+        │   ├── consolidated_*.csv
+        │   └── analysis_*.csv
+        ├── scenario_2/
+        │   └── ...
+        └── ...
+```
+
+### CSV Scenario Format
+
+The scenarios CSV file should have these columns:
+- `bucket`: Risk category (e.g., "low", "medium", "high")
+- `risk_level`: Numeric risk level
+- `age`: Patient age
+- `gender`: Patient gender
+- `t1d`: Type 1 diabetes (boolean)
+- `t2d`: Type 2 diabetes (boolean)
+- `hypertension`: Hypertension status (boolean)
+- `cardiovascular`: Cardiovascular condition (boolean)
+- `fatigue`: Fatigue symptoms (boolean)
+- `pedal_edema`: Pedal edema symptoms (boolean)
+- `scenario_desc`: Detailed scenario description
+
+### Usage
+
+**Basic Usage:**
+```bash
+python scenario_testing.py --llm_provider groq --model llama --num_simulations 5
+```
+
+**Using OpenAI:**
+```bash
+python scenario_testing.py --llm_provider openai --num_simulations 3
+```
+
+**Custom Scenarios File:**
+```bash
+python scenario_testing.py --scenarios_file "custom_scenarios.csv" --num_simulations 5
+```
+
+**Custom Output Directory:**
+```bash
+python scenario_testing.py --output_dir "test_results/scenarios" --num_simulations 5
+```
+
+### Command Line Arguments
+
+| Argument | Type | Default | Description |
+|----------|------|---------|-------------|
+| `--llm_provider` | choice | `groq` | LLM provider (`groq` or `openai`) |
+| `--model` | choice | `llama` | Groq model (`llama`, `deepseek`, `mistral`) |
+| `--num_simulations` | integer | `5` | Number of simulations per scenario |
+| `--output_dir` | string | `output/scenarios` | Directory to save results |
+| `--scenarios_file` | string | `scenarios/ckd_scenarios.csv` | Path to scenarios CSV file |
+
+### Output Files
+
+For each scenario, the script generates:
+
+1. **Individual Assessment Reports**
+   - Filename: `ckd_assessment_{scenario}_{timestamp}.md`
+   - Location: `output/scenarios/scenario_{N}/`
+   - Contains: Complete assessment results for each simulation
+
+2. **Consolidated CSV Files**
+   - Base filename: `consolidated_{scenario}_{timestamp}_{type}.csv`
+   - Types:
+     - `*_responses.csv`: All QnA responses with scenario metadata
+     - `*_risk_factors.csv`: Risk factor analysis with percentages
+     - `*_risk_scores.csv`: Risk scores and confidence levels
+
+3. **Analysis Reports**
+   - Generated in each scenario directory
+   - Includes statistical analysis of all simulations
+   - Contains scenario-specific insights and trends
+
+### Performance Considerations
+
+- **Processing Time**: 
+  - Each scenario: 2-3 minutes (5 simulations)
+  - Analysis: Additional 5-10 seconds per scenario
+- **Storage**: 
+  - Each scenario directory: ~100-200KB
+  - Total size depends on number of scenarios and simulations
+- **Memory Usage**: 
+  - Similar to scripts.py
+  - Additional memory for scenario data management
+
+### Error Handling
+
+The script includes comprehensive error handling:
+- Validates CSV format and required columns
+- Creates output directories if they don't exist
+- Logs all operations to `scenario_testing.log`
+- Continues processing remaining scenarios if one fails
+
+### Example Integration
+
+```bash
+#!/bin/bash
+# run_scenario_tests.sh
+
+# Run tests with different configurations
+python scenario_testing.py --llm_provider groq --model llama --num_simulations 1
+python scenario_testing.py --llm_provider openai --num_simulations 3
+
+# Check for errors
+if [ $? -ne 0 ]; then
+    echo "Scenario testing failed"
+    exit 1
+fi
+
+echo "All scenario tests completed successfully!"
+``` 

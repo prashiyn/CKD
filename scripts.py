@@ -418,7 +418,8 @@ class ResultsExporter:
         """Export single assessment result to markdown"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         scenario_clean = self._clean_filename(assessment_result['scenario'])
-        filename = f"ckd_assessment_{scenario_clean}_{timestamp}.md"
+        sim_num = assessment_result.get('simulation_number', 1)
+        filename = f"ckd_assessment_{scenario_clean}_sim{sim_num:03d}_{timestamp}.md"
         filepath = self.output_dir / filename
         
         markdown_content = self._generate_markdown(assessment_result)
@@ -444,6 +445,7 @@ class ResultsExporter:
 ## Test Scenario
 **Patient Description:** {assessment_result['scenario']}
 **Assessment Date:** {assessment_result['timestamp']}
+**Simulation Number:** {assessment_result.get('simulation_number', 1)}
 
 ## Error Details
 ```
@@ -456,6 +458,7 @@ class ResultsExporter:
 ## Test Scenario
 **Patient Description:** {assessment_result['scenario']}
 **Assessment Date:** {assessment_result['timestamp']}
+**Simulation Number:** {assessment_result.get('simulation_number', 1)}
 **Processing Time:** {assessment_result['processing_time_seconds']} seconds
 
 ## Configuration
@@ -486,6 +489,127 @@ class ResultsExporter:
             rows.append(f"| {question} | {answer} |")
         return "\n".join(rows)
 
+class SimulationResultsAggregator:
+    """Aggregate results from multiple simulations into CSV reports"""
+    
+    def __init__(self, output_dir: str = "output"):
+        self.output_dir = Path(output_dir)
+        self.output_dir.mkdir(exist_ok=True)
+        logger.info(f"Consolidated reports will be exported to: {self.output_dir.absolute()}")
+    
+    def aggregate_results(self, assessment_results: List[Dict[str, Any]], scenario: str) -> Dict[str, str]:
+        """Aggregate results from multiple simulations into CSV files"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        scenario_clean = self._clean_filename(scenario)
+        base_filename = f"consolidated_{scenario_clean}_{timestamp}"
+        
+        # Generate CSV files
+        responses_csv = self._generate_responses_csv(assessment_results, base_filename)
+        risk_factors_csv = self._generate_risk_factors_csv(assessment_results, base_filename)
+        risk_scores_csv = self._generate_risk_scores_csv(assessment_results, base_filename)
+        
+        return {
+            "responses": responses_csv,
+            "risk_factors": risk_factors_csv,
+            "risk_scores": risk_scores_csv
+        }
+    
+    def _clean_filename(self, text: str) -> str:
+        """Clean text for use in filename"""
+        import re
+        clean = re.sub(r'[^\w\s-]', '', text)
+        clean = re.sub(r'[-\s]+', '_', clean)
+        return clean[:50].strip('_')
+    
+    def _generate_responses_csv(self, assessment_results: List[Dict[str, Any]], base_filename: str) -> str:
+        """Generate CSV of question responses across simulations"""
+        import csv
+        
+        # Get all unique questions
+        all_questions = set()
+        for result in assessment_results:
+            for qna in result['qna_responses']:
+                all_questions.add(qna['question'])
+        
+        # Create CSV with simulation number and responses
+        filename = f"{base_filename}_responses.csv"
+        filepath = self.output_dir / filename
+        
+        with open(filepath, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            
+            # Write header
+            header = ['simulation_number', 'question_number', 'question', 'response']
+            writer.writerow(header)
+            
+            # Write data
+            for result in assessment_results:
+                sim_num = result['simulation_number']
+                for i, qna in enumerate(result['qna_responses'], 1):
+                    writer.writerow([sim_num, i, qna['question'], qna['answer']])
+        
+        return str(filepath)
+    
+    def _generate_risk_factors_csv(self, assessment_results: List[Dict[str, Any]], base_filename: str) -> str:
+        """Generate CSV of risk factors across simulations"""
+        import csv
+        import re
+        
+        filename = f"{base_filename}_risk_factors.csv"
+        filepath = self.output_dir / filename
+        
+        with open(filepath, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            
+            # Write header
+            header = ['simulation_number', 'risk_factor', 'percentage']
+            writer.writerow(header)
+            
+            # Write data
+            for result in assessment_results:
+                sim_num = result['simulation_number']
+                content = result['assessment_result']
+                
+                # Extract risk factors using regex
+                risk_pattern = r"(\d+)%\s*-\s*([^:]+):"
+                risk_factors = re.findall(risk_pattern, content)
+                
+                for percentage, factor in risk_factors:
+                    writer.writerow([sim_num, factor.strip(), percentage])
+        
+        return str(filepath)
+    
+    def _generate_risk_scores_csv(self, assessment_results: List[Dict[str, Any]], base_filename: str) -> str:
+        """Generate CSV of final risk scores across simulations"""
+        import csv
+        import re
+        
+        filename = f"{base_filename}_risk_scores.csv"
+        filepath = self.output_dir / filename
+        
+        with open(filepath, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            
+            # Write header
+            header = ['simulation_number', 'risk_score', 'confidence_percentage']
+            writer.writerow(header)
+            
+            # Write data
+            for result in assessment_results:
+                sim_num = result['simulation_number']
+                content = result['assessment_result']
+                
+                # Extract risk score and confidence
+                risk_score_match = re.search(r"(\d+)%", content)
+                confidence_match = re.search(r"(\d+)% confidence", content)
+                
+                risk_score = risk_score_match.group(1) if risk_score_match else "N/A"
+                confidence = confidence_match.group(1) if confidence_match else "N/A"
+                
+                writer.writerow([sim_num, risk_score, confidence])
+        
+        return str(filepath)
+
 def parse_args():
     """Parse command line arguments"""
     parser = argparse.ArgumentParser(description="CKD Assessment Testing Script")
@@ -499,6 +623,10 @@ def parse_args():
                        default='llama', help='Groq model to use')
     parser.add_argument('--output_dir', type=str, default='output', 
                        help='Directory to save results')
+    parser.add_argument('--num_simulations', type=int, default=1,
+                       help='Number of simulations to run with different responses')
+    parser.add_argument('--analyze', action='store_true',
+                       help='Run analysis after generating results')
     
     return parser.parse_args()
 
@@ -518,22 +646,51 @@ def main():
         generator = CKDTestScenarioGenerator(args.llm_provider, args.model)
         tester = CKDAgentWorkflowTester(args.llm_provider, args.model)
         exporter = ResultsExporter(args.output_dir)
+        aggregator = SimulationResultsAggregator(args.output_dir)
         
-        # Generate responses
-        logger.info("Generating patient responses...")
-        qna_data = generator.generate_responses(args.scenario, args.response_type)
+        # Store all assessment results
+        all_assessment_results = []
         
-        # Run assessment
-        logger.info("Running CKD assessment...")
-        assessment_result = tester.run_assessment(qna_data)
+        # Run multiple simulations
+        for sim_num in range(args.num_simulations):
+            logger.info(f"Running simulation {sim_num + 1}/{args.num_simulations}")
+            
+            # Generate responses
+            logger.info("Generating patient responses...")
+            qna_data = generator.generate_responses(args.scenario, args.response_type)
+            
+            # Run assessment
+            logger.info("Running CKD assessment...")
+            assessment_result = tester.run_assessment(qna_data)
+            
+            # Add simulation number to result
+            assessment_result['simulation_number'] = sim_num + 1
+            
+            # Export individual results
+            logger.info("Exporting results...")
+            output_file = exporter.export_assessment(assessment_result)
+            
+            # Store result for aggregation
+            all_assessment_results.append(assessment_result)
+            
+            logger.info(f"Simulation {sim_num + 1} completed. Results saved to: {output_file}")
         
-        # Export results
-        logger.info("Exporting results...")
-        output_file = exporter.export_assessment(assessment_result)
+        # Generate consolidated reports
+        if args.num_simulations > 1:
+            logger.info("Generating consolidated reports...")
+            csv_files = aggregator.aggregate_results(all_assessment_results, args.scenario)
+            logger.info(f"Consolidated reports generated: {csv_files}")
+            
+            # Run analysis if requested
+            if args.analyze:
+                logger.info("Running analysis on consolidated results...")
+                from analyze import SimulationAnalyzer
+                analyzer = SimulationAnalyzer(args.output_dir)
+                analysis = analyzer.analyze_results(analyzer.combine_data(analyzer.load_data(csv_files)))
+                analyzer.export_analysis(analysis, args.scenario)
+                logger.info("Analysis completed and exported")
         
-        logger.info(f"Testing completed successfully!")
-        logger.info(f"Results saved to: {output_file}")
-        
+        logger.info(f"All {args.num_simulations} simulations completed successfully!")
         return 0
         
     except Exception as e:

@@ -11298,3 +11298,1771 @@ LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
 2025-06-13 11:59:20,010 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
 2025-06-13 11:59:20,010 - INFO - CrewOutput.raw length: 9718
 2025-06-13 11:59:20,012 - INFO - Found 2 tables in the assessment output
+2025-06-13 12:17:07,352 - INFO - Initialized current_question_index to 0
+2025-06-13 12:17:07,353 - INFO - Initialized collected_answers as empty list
+2025-06-13 12:17:07,353 - INFO - Updated questions list with 19 questions from prompts.py
+2025-06-13 12:17:07,354 - INFO - Initialized waiting_for_answer to False
+2025-06-13 12:17:07,354 - INFO - Initialized current_question as empty string
+2025-06-13 12:17:10,517 - INFO - Starting fresh QnA session with 19 questions
+2025-06-13 12:17:10,643 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 0
+2025-06-13 12:17:10,645 - INFO - Asking question #1: 1. What is your gender? (male/female/other)
+2025-06-13 12:17:14,455 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 0
+2025-06-13 12:17:14,455 - INFO - Received patient response: male
+2025-06-13 12:17:14,455 - INFO - Stored answer #1: {'question': '1. What is your gender? (male/female/other)', 'answer': 'male'}
+2025-06-13 12:17:14,456 - INFO - Moving to next question. New index: 1
+2025-06-13 12:17:14,593 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 1
+2025-06-13 12:17:14,594 - INFO - Asking question #2: 2. What is your current age?
+2025-06-13 12:17:16,709 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 1
+2025-06-13 12:17:16,710 - INFO - Received patient response: 45
+2025-06-13 12:17:16,710 - INFO - Stored answer #2: {'question': '2. What is your current age?', 'answer': '45'}
+2025-06-13 12:17:16,711 - INFO - Moving to next question. New index: 2
+2025-06-13 12:17:16,843 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 2
+2025-06-13 12:17:16,843 - INFO - Asking question #3: 3. Do you have high blood pressure (hypertension)? (yes/no/maybe)
+2025-06-13 12:17:18,892 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 2
+2025-06-13 12:17:18,892 - INFO - Received patient response: yes
+2025-06-13 12:17:18,892 - INFO - Stored answer #3: {'question': '3. Do you have high blood pressure (hypertension)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:17:18,893 - INFO - Moving to next question. New index: 3
+2025-06-13 12:17:19,029 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 3
+2025-06-13 12:17:19,030 - INFO - Asking question #4: 4. Do you have Type 1 diabetes? (yes/no/maybe)
+2025-06-13 12:17:21,070 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 3
+2025-06-13 12:17:21,070 - INFO - Received patient response: yes
+2025-06-13 12:17:21,070 - INFO - Stored answer #4: {'question': '4. Do you have Type 1 diabetes? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:17:21,071 - INFO - Moving to next question. New index: 4
+2025-06-13 12:17:21,206 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 4
+2025-06-13 12:17:21,207 - INFO - Asking question #5: 5. Do you have Type 2 diabetes? (yes/no/maybe)
+2025-06-13 12:17:23,140 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 4
+2025-06-13 12:17:23,141 - INFO - Received patient response: no
+2025-06-13 12:17:23,142 - INFO - Stored answer #5: {'question': '5. Do you have Type 2 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:23,143 - INFO - Moving to next question. New index: 5
+2025-06-13 12:17:23,291 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 5
+2025-06-13 12:17:23,291 - INFO - Asking question #6: 6. Do you have any cardiovascular disease? (yes/no/maybe)
+2025-06-13 12:17:25,254 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 5
+2025-06-13 12:17:25,255 - INFO - Received patient response: git push -u origin main
+2025-06-13 12:17:25,255 - INFO - Stored answer #6: {'question': '6. Do you have any cardiovascular disease? (yes/no/maybe)', 'answer': 'git push -u origin main'}
+2025-06-13 12:17:25,256 - INFO - Moving to next question. New index: 6
+2025-06-13 12:17:25,389 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 6
+2025-06-13 12:17:25,391 - INFO - Asking question #7: 7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)
+2025-06-13 12:17:30,070 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 6
+2025-06-13 12:17:30,071 - INFO - Received patient response: no
+2025-06-13 12:17:30,071 - INFO - Stored answer #7: {'question': '7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)', 'answer': 'no'}
+2025-06-13 12:17:30,071 - INFO - Moving to next question. New index: 7
+2025-06-13 12:17:30,222 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 7
+2025-06-13 12:17:30,224 - INFO - Asking question #8: 8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)
+2025-06-13 12:17:31,530 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 7
+2025-06-13 12:17:31,530 - INFO - Received patient response: no
+2025-06-13 12:17:31,532 - INFO - Stored answer #8: {'question': '8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:31,533 - INFO - Moving to next question. New index: 8
+2025-06-13 12:17:31,675 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 8
+2025-06-13 12:17:31,676 - INFO - Asking question #9: 9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)
+2025-06-13 12:17:32,571 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 8
+2025-06-13 12:17:32,571 - INFO - Received patient response: no
+2025-06-13 12:17:32,572 - INFO - Stored answer #9: {'question': '9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:32,573 - INFO - Moving to next question. New index: 9
+2025-06-13 12:17:32,703 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 9
+2025-06-13 12:17:32,704 - INFO - Asking question #10: 10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)
+2025-06-13 12:17:33,759 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 9
+2025-06-13 12:17:33,759 - INFO - Received patient response: yes
+2025-06-13 12:17:33,759 - INFO - Stored answer #10: {'question': '10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:17:33,762 - INFO - Moving to next question. New index: 10
+2025-06-13 12:17:33,902 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 10
+2025-06-13 12:17:33,902 - INFO - Asking question #11: 11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)
+2025-06-13 12:17:34,584 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 10
+2025-06-13 12:17:34,585 - INFO - Received patient response: no
+2025-06-13 12:17:34,585 - INFO - Stored answer #11: {'question': '11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:34,586 - INFO - Moving to next question. New index: 11
+2025-06-13 12:17:34,734 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 11
+2025-06-13 12:17:34,737 - INFO - Asking question #12: 12. Have you noticed a decrease in your urine output? (yes/no/maybe)
+2025-06-13 12:17:35,736 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 11
+2025-06-13 12:17:35,737 - INFO - Received patient response: yes
+2025-06-13 12:17:35,737 - INFO - Stored answer #12: {'question': '12. Have you noticed a decrease in your urine output? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:17:35,739 - INFO - Moving to next question. New index: 12
+2025-06-13 12:17:35,894 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 12
+2025-06-13 12:17:35,896 - INFO - Asking question #13: 13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)
+2025-06-13 12:17:36,486 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 12
+2025-06-13 12:17:36,487 - INFO - Received patient response: no
+2025-06-13 12:17:36,488 - INFO - Stored answer #13: {'question': '13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:36,490 - INFO - Moving to next question. New index: 13
+2025-06-13 12:17:36,627 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 13
+2025-06-13 12:17:36,628 - INFO - Asking question #14: 14. Do you experience nausea or vomiting? (yes/no/maybe)
+2025-06-13 12:17:37,364 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 13
+2025-06-13 12:17:37,366 - INFO - Received patient response: no
+2025-06-13 12:17:37,366 - INFO - Stored answer #14: {'question': '14. Do you experience nausea or vomiting? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:37,367 - INFO - Moving to next question. New index: 14
+2025-06-13 12:17:37,519 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 14
+2025-06-13 12:17:37,522 - INFO - Asking question #15: 15. Do you have a metallic taste in your mouth? (yes/no/maybe)
+2025-06-13 12:17:38,317 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 14
+2025-06-13 12:17:38,317 - INFO - Received patient response: no
+2025-06-13 12:17:38,318 - INFO - Stored answer #15: {'question': '15. Do you have a metallic taste in your mouth? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:38,320 - INFO - Moving to next question. New index: 15
+2025-06-13 12:17:38,479 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 15
+2025-06-13 12:17:38,480 - INFO - Asking question #16: 16. Have you lost weight unintentionally? (yes/no/maybe)
+2025-06-13 12:17:39,199 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 15
+2025-06-13 12:17:39,199 - INFO - Received patient response: no
+2025-06-13 12:17:39,199 - INFO - Stored answer #16: {'question': '16. Have you lost weight unintentionally? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:39,200 - INFO - Moving to next question. New index: 16
+2025-06-13 12:17:39,387 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 16
+2025-06-13 12:17:39,387 - INFO - Asking question #17: 17. Do you experience persistent itching? (yes/no/maybe)
+2025-06-13 12:17:40,140 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 16
+2025-06-13 12:17:40,141 - INFO - Received patient response: no
+2025-06-13 12:17:40,143 - INFO - Stored answer #17: {'question': '17. Do you experience persistent itching? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:40,147 - INFO - Moving to next question. New index: 17
+2025-06-13 12:17:40,342 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 17
+2025-06-13 12:17:40,346 - INFO - Asking question #18: 18. Have you noticed any changes in your mental state? (none/confusion/memory problems)
+2025-06-13 12:17:41,207 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 17
+2025-06-13 12:17:41,210 - INFO - Received patient response: no
+2025-06-13 12:17:41,210 - INFO - Stored answer #18: {'question': '18. Have you noticed any changes in your mental state? (none/confusion/memory problems)', 'answer': 'no'}
+2025-06-13 12:17:41,210 - INFO - Moving to next question. New index: 18
+2025-06-13 12:17:41,359 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 18
+2025-06-13 12:17:41,360 - INFO - Asking question #19: 19. Do you have difficulty breathing? (yes/no/maybe)
+2025-06-13 12:17:42,240 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 18
+2025-06-13 12:17:42,240 - INFO - Received patient response: no
+2025-06-13 12:17:42,240 - INFO - Stored answer #19: {'question': '19. Do you have difficulty breathing? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:17:42,241 - INFO - Moving to next question. New index: 19
+2025-06-13 12:17:42,411 - INFO - Starting crew analysis with 19 patient responses
+2025-06-13 12:17:46,650 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:17:46,650 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:17:50,757 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-13 12:17:50,861 - INFO - Starting CrewAI execution...
+2025-06-13 12:17:50,880 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:17:55,274 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:17:55,279 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:17:55,309 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:17:57,928 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:17:57,933 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:17:57,979 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:18:01,512 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:18:01,514 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:18:01,528 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:18:04,403 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:18:04,408 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:18:04,464 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:18:08,930 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:18:08,932 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:18:08,949 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:18:08,949 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:18:11,652 - INFO - Searching medical knowledge for: KDIGO guidelines for CKD risk assessment using groq embeddings
+2025-06-13 12:18:11,698 - INFO - Found 5 relevant documents for query: KDIGO guidelines for CKD risk assessment
+2025-06-13 12:18:11,706 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:18:45,204 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:18:45,209 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:18:45,239 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:18:49,025 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:18:49,031 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:18:49,082 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:18:56,159 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:18:56,164 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:18:56,230 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:19:05,883 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:19:05,888 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:19:05,931 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
+2025-06-13 12:19:05,931 - INFO - CrewOutput.raw length: 11580
+2025-06-13 12:19:05,932 - INFO - Found 2 tables in the assessment output
+2025-06-13 12:22:53,655 - INFO - Session reset by user
+2025-06-13 12:22:53,873 - INFO - Initialized current_question_index to 0
+2025-06-13 12:22:53,874 - INFO - Initialized collected_answers as empty list
+2025-06-13 12:22:53,874 - INFO - Updated questions list with 19 questions from prompts.py
+2025-06-13 12:22:53,875 - INFO - Initialized waiting_for_answer to False
+2025-06-13 12:22:53,875 - INFO - Initialized current_question as empty string
+2025-06-13 12:22:56,307 - INFO - Starting fresh QnA session with 19 questions
+2025-06-13 12:22:56,554 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 0
+2025-06-13 12:22:56,555 - INFO - Asking question #1: 1. What is your gender? (male/female/other)
+2025-06-13 12:22:58,649 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 0
+2025-06-13 12:22:58,650 - INFO - Received patient response: nake
+2025-06-13 12:22:58,650 - INFO - Stored answer #1: {'question': '1. What is your gender? (male/female/other)', 'answer': 'nake'}
+2025-06-13 12:22:58,651 - INFO - Moving to next question. New index: 1
+2025-06-13 12:22:58,922 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 1
+2025-06-13 12:22:58,925 - INFO - Asking question #2: 2. What is your current age?
+2025-06-13 12:23:00,770 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 1
+2025-06-13 12:23:00,771 - INFO - Received patient response: 45
+2025-06-13 12:23:00,771 - INFO - Stored answer #2: {'question': '2. What is your current age?', 'answer': '45'}
+2025-06-13 12:23:00,771 - INFO - Moving to next question. New index: 2
+2025-06-13 12:23:01,029 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 2
+2025-06-13 12:23:01,031 - INFO - Asking question #3: 3. Do you have high blood pressure (hypertension)? (yes/no/maybe)
+2025-06-13 12:23:03,385 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 2
+2025-06-13 12:23:03,385 - INFO - Received patient response: yes
+2025-06-13 12:23:03,385 - INFO - Stored answer #3: {'question': '3. Do you have high blood pressure (hypertension)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:23:03,387 - INFO - Moving to next question. New index: 3
+2025-06-13 12:23:03,663 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 3
+2025-06-13 12:23:03,663 - INFO - Asking question #4: 4. Do you have Type 1 diabetes? (yes/no/maybe)
+2025-06-13 12:23:06,821 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 3
+2025-06-13 12:23:06,822 - INFO - Received patient response: yes
+2025-06-13 12:23:06,822 - INFO - Stored answer #4: {'question': '4. Do you have Type 1 diabetes? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:23:06,822 - INFO - Moving to next question. New index: 4
+2025-06-13 12:23:07,089 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 4
+2025-06-13 12:23:07,090 - INFO - Asking question #5: 5. Do you have Type 2 diabetes? (yes/no/maybe)
+2025-06-13 12:23:09,299 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 4
+2025-06-13 12:23:09,300 - INFO - Received patient response: no
+2025-06-13 12:23:09,301 - INFO - Stored answer #5: {'question': '5. Do you have Type 2 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:09,301 - INFO - Moving to next question. New index: 5
+2025-06-13 12:23:09,575 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 5
+2025-06-13 12:23:09,576 - INFO - Asking question #6: 6. Do you have any cardiovascular disease? (yes/no/maybe)
+2025-06-13 12:23:11,427 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 5
+2025-06-13 12:23:11,428 - INFO - Received patient response: no
+2025-06-13 12:23:11,429 - INFO - Stored answer #6: {'question': '6. Do you have any cardiovascular disease? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:11,429 - INFO - Moving to next question. New index: 6
+2025-06-13 12:23:11,692 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 6
+2025-06-13 12:23:11,692 - INFO - Asking question #7: 7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)
+2025-06-13 12:23:14,431 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 6
+2025-06-13 12:23:14,431 - INFO - Received patient response: no
+2025-06-13 12:23:14,432 - INFO - Stored answer #7: {'question': '7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)', 'answer': 'no'}
+2025-06-13 12:23:14,433 - INFO - Moving to next question. New index: 7
+2025-06-13 12:23:14,706 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 7
+2025-06-13 12:23:14,707 - INFO - Asking question #8: 8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)
+2025-06-13 12:23:16,855 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 7
+2025-06-13 12:23:16,856 - INFO - Received patient response: yes
+2025-06-13 12:23:16,858 - INFO - Stored answer #8: {'question': '8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:23:16,859 - INFO - Moving to next question. New index: 8
+2025-06-13 12:23:17,128 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 8
+2025-06-13 12:23:17,130 - INFO - Asking question #9: 9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)
+2025-06-13 12:23:19,977 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 8
+2025-06-13 12:23:19,977 - INFO - Received patient response: yes
+2025-06-13 12:23:19,977 - INFO - Stored answer #9: {'question': '9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:23:19,980 - INFO - Moving to next question. New index: 9
+2025-06-13 12:23:20,253 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 9
+2025-06-13 12:23:20,253 - INFO - Asking question #10: 10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)
+2025-06-13 12:23:21,603 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 9
+2025-06-13 12:23:21,603 - INFO - Received patient response: no
+2025-06-13 12:23:21,603 - INFO - Stored answer #10: {'question': '10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:21,605 - INFO - Moving to next question. New index: 10
+2025-06-13 12:23:21,857 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 10
+2025-06-13 12:23:21,858 - INFO - Asking question #11: 11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)
+2025-06-13 12:23:23,871 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 10
+2025-06-13 12:23:23,878 - INFO - Received patient response: no
+2025-06-13 12:23:23,878 - INFO - Stored answer #11: {'question': '11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:23,879 - INFO - Moving to next question. New index: 11
+2025-06-13 12:23:24,146 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 11
+2025-06-13 12:23:24,147 - INFO - Asking question #12: 12. Have you noticed a decrease in your urine output? (yes/no/maybe)
+2025-06-13 12:23:25,079 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 11
+2025-06-13 12:23:25,080 - INFO - Received patient response: no
+2025-06-13 12:23:25,080 - INFO - Stored answer #12: {'question': '12. Have you noticed a decrease in your urine output? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:25,080 - INFO - Moving to next question. New index: 12
+2025-06-13 12:23:25,376 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 12
+2025-06-13 12:23:25,377 - INFO - Asking question #13: 13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)
+2025-06-13 12:23:28,782 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 12
+2025-06-13 12:23:28,782 - INFO - Received patient response: yes
+2025-06-13 12:23:28,782 - INFO - Stored answer #13: {'question': '13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:23:28,782 - INFO - Moving to next question. New index: 13
+2025-06-13 12:23:29,070 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 13
+2025-06-13 12:23:29,072 - INFO - Asking question #14: 14. Do you experience nausea or vomiting? (yes/no/maybe)
+2025-06-13 12:23:30,274 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 13
+2025-06-13 12:23:30,275 - INFO - Received patient response: no
+2025-06-13 12:23:30,276 - INFO - Stored answer #14: {'question': '14. Do you experience nausea or vomiting? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:30,278 - INFO - Moving to next question. New index: 14
+2025-06-13 12:23:30,558 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 14
+2025-06-13 12:23:30,558 - INFO - Asking question #15: 15. Do you have a metallic taste in your mouth? (yes/no/maybe)
+2025-06-13 12:23:31,619 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 14
+2025-06-13 12:23:31,619 - INFO - Received patient response: no
+2025-06-13 12:23:31,619 - INFO - Stored answer #15: {'question': '15. Do you have a metallic taste in your mouth? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:31,621 - INFO - Moving to next question. New index: 15
+2025-06-13 12:23:31,899 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 15
+2025-06-13 12:23:31,899 - INFO - Asking question #16: 16. Have you lost weight unintentionally? (yes/no/maybe)
+2025-06-13 12:23:32,616 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 15
+2025-06-13 12:23:32,618 - INFO - Received patient response: no
+2025-06-13 12:23:32,619 - INFO - Stored answer #16: {'question': '16. Have you lost weight unintentionally? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:32,620 - INFO - Moving to next question. New index: 16
+2025-06-13 12:23:32,919 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 16
+2025-06-13 12:23:32,920 - INFO - Asking question #17: 17. Do you experience persistent itching? (yes/no/maybe)
+2025-06-13 12:23:33,660 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 16
+2025-06-13 12:23:33,660 - INFO - Received patient response: no
+2025-06-13 12:23:33,661 - INFO - Stored answer #17: {'question': '17. Do you experience persistent itching? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:33,662 - INFO - Moving to next question. New index: 17
+2025-06-13 12:23:33,948 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 17
+2025-06-13 12:23:33,950 - INFO - Asking question #18: 18. Have you noticed any changes in your mental state? (none/confusion/memory problems)
+2025-06-13 12:23:36,007 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 17
+2025-06-13 12:23:36,007 - INFO - Received patient response: no
+2025-06-13 12:23:36,008 - INFO - Stored answer #18: {'question': '18. Have you noticed any changes in your mental state? (none/confusion/memory problems)', 'answer': 'no'}
+2025-06-13 12:23:36,009 - INFO - Moving to next question. New index: 18
+2025-06-13 12:23:36,280 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 18
+2025-06-13 12:23:36,280 - INFO - Asking question #19: 19. Do you have difficulty breathing? (yes/no/maybe)
+2025-06-13 12:23:37,691 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 18
+2025-06-13 12:23:37,691 - INFO - Received patient response: no
+2025-06-13 12:23:37,691 - INFO - Stored answer #19: {'question': '19. Do you have difficulty breathing? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:23:37,694 - INFO - Moving to next question. New index: 19
+2025-06-13 12:23:37,964 - INFO - Starting crew analysis with 19 patient responses
+2025-06-13 12:23:37,974 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:23:37,974 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:23:40,749 - INFO - Starting CrewAI execution...
+2025-06-13 12:23:40,774 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:23:45,850 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:23:45,853 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:23:45,865 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:23:49,834 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:23:49,844 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:23:49,888 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:23:55,211 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:23:55,214 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:23:55,262 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:23:59,865 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:23:59,870 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:23:59,921 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:24:06,436 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:24:06,437 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:24:06,470 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:24:12,542 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:24:12,547 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:24:12,574 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:24:19,761 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:24:19,767 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:24:19,822 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
+2025-06-13 12:24:19,823 - INFO - CrewOutput.raw length: 5923
+2025-06-13 12:24:19,823 - INFO - Found 2 tables in the assessment output
+2025-06-13 12:24:38,878 - INFO - Session reset by user
+2025-06-13 12:24:39,095 - INFO - Initialized current_question_index to 0
+2025-06-13 12:24:39,095 - INFO - Initialized collected_answers as empty list
+2025-06-13 12:24:39,096 - INFO - Updated questions list with 19 questions from prompts.py
+2025-06-13 12:24:39,096 - INFO - Initialized waiting_for_answer to False
+2025-06-13 12:24:39,097 - INFO - Initialized current_question as empty string
+2025-06-13 12:25:05,649 - INFO - Starting fresh QnA session with 19 questions
+2025-06-13 12:25:05,907 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 0
+2025-06-13 12:25:05,908 - INFO - Asking question #1: 1. What is your gender? (male/female/other)
+2025-06-13 12:25:08,028 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 0
+2025-06-13 12:25:08,028 - INFO - Received patient response: male
+2025-06-13 12:25:08,029 - INFO - Stored answer #1: {'question': '1. What is your gender? (male/female/other)', 'answer': 'male'}
+2025-06-13 12:25:08,031 - INFO - Moving to next question. New index: 1
+2025-06-13 12:25:08,287 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 1
+2025-06-13 12:25:08,288 - INFO - Asking question #2: 2. What is your current age?
+2025-06-13 12:25:10,731 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 1
+2025-06-13 12:25:10,731 - INFO - Received patient response: 45
+2025-06-13 12:25:10,733 - INFO - Stored answer #2: {'question': '2. What is your current age?', 'answer': '45'}
+2025-06-13 12:25:10,734 - INFO - Moving to next question. New index: 2
+2025-06-13 12:25:10,997 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 2
+2025-06-13 12:25:10,999 - INFO - Asking question #3: 3. Do you have high blood pressure (hypertension)? (yes/no/maybe)
+2025-06-13 12:25:13,271 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 2
+2025-06-13 12:25:13,272 - INFO - Received patient response: yes
+2025-06-13 12:25:13,273 - INFO - Stored answer #3: {'question': '3. Do you have high blood pressure (hypertension)? (yes/no/maybe)', 'answer': 'yes'}
+2025-06-13 12:25:13,274 - INFO - Moving to next question. New index: 3
+2025-06-13 12:25:13,547 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 3
+2025-06-13 12:25:13,548 - INFO - Asking question #4: 4. Do you have Type 1 diabetes? (yes/no/maybe)
+2025-06-13 12:25:14,720 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 3
+2025-06-13 12:25:14,720 - INFO - Received patient response: no
+2025-06-13 12:25:14,721 - INFO - Stored answer #4: {'question': '4. Do you have Type 1 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:14,722 - INFO - Moving to next question. New index: 4
+2025-06-13 12:25:14,999 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 4
+2025-06-13 12:25:14,999 - INFO - Asking question #5: 5. Do you have Type 2 diabetes? (yes/no/maybe)
+2025-06-13 12:25:15,539 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 4
+2025-06-13 12:25:15,540 - INFO - Received patient response: no
+2025-06-13 12:25:15,540 - INFO - Stored answer #5: {'question': '5. Do you have Type 2 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:15,541 - INFO - Moving to next question. New index: 5
+2025-06-13 12:25:15,813 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 5
+2025-06-13 12:25:15,814 - INFO - Asking question #6: 6. Do you have any cardiovascular disease? (yes/no/maybe)
+2025-06-13 12:25:17,532 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 5
+2025-06-13 12:25:17,532 - INFO - Received patient response: no
+2025-06-13 12:25:17,532 - INFO - Stored answer #6: {'question': '6. Do you have any cardiovascular disease? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:17,533 - INFO - Moving to next question. New index: 6
+2025-06-13 12:25:17,803 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 6
+2025-06-13 12:25:17,804 - INFO - Asking question #7: 7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)
+2025-06-13 12:25:18,883 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 6
+2025-06-13 12:25:18,884 - INFO - Received patient response: no
+2025-06-13 12:25:18,884 - INFO - Stored answer #7: {'question': '7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)', 'answer': 'no'}
+2025-06-13 12:25:18,886 - INFO - Moving to next question. New index: 7
+2025-06-13 12:25:19,148 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 7
+2025-06-13 12:25:19,150 - INFO - Asking question #8: 8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)
+2025-06-13 12:25:21,092 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 7
+2025-06-13 12:25:21,093 - INFO - Received patient response: no
+2025-06-13 12:25:21,095 - INFO - Stored answer #8: {'question': '8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:21,096 - INFO - Moving to next question. New index: 8
+2025-06-13 12:25:21,345 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 8
+2025-06-13 12:25:21,347 - INFO - Asking question #9: 9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)
+2025-06-13 12:25:22,296 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 8
+2025-06-13 12:25:22,297 - INFO - Received patient response: no
+2025-06-13 12:25:22,298 - INFO - Stored answer #9: {'question': '9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:22,304 - INFO - Moving to next question. New index: 9
+2025-06-13 12:25:22,577 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 9
+2025-06-13 12:25:22,578 - INFO - Asking question #10: 10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)
+2025-06-13 12:25:23,805 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 9
+2025-06-13 12:25:23,806 - INFO - Received patient response: no
+2025-06-13 12:25:23,806 - INFO - Stored answer #10: {'question': '10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:23,808 - INFO - Moving to next question. New index: 10
+2025-06-13 12:25:24,076 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 10
+2025-06-13 12:25:24,076 - INFO - Asking question #11: 11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)
+2025-06-13 12:25:25,651 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 10
+2025-06-13 12:25:25,653 - INFO - Received patient response: v
+2025-06-13 12:25:25,654 - INFO - Stored answer #11: {'question': '11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)', 'answer': 'v'}
+2025-06-13 12:25:25,655 - INFO - Moving to next question. New index: 11
+2025-06-13 12:25:25,935 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 11
+2025-06-13 12:25:25,936 - INFO - Asking question #12: 12. Have you noticed a decrease in your urine output? (yes/no/maybe)
+2025-06-13 12:25:26,531 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 11
+2025-06-13 12:25:26,531 - INFO - Received patient response: no
+2025-06-13 12:25:26,532 - INFO - Stored answer #12: {'question': '12. Have you noticed a decrease in your urine output? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:26,533 - INFO - Moving to next question. New index: 12
+2025-06-13 12:25:26,810 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 12
+2025-06-13 12:25:26,811 - INFO - Asking question #13: 13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)
+2025-06-13 12:25:28,397 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 12
+2025-06-13 12:25:28,399 - INFO - Received patient response: no
+2025-06-13 12:25:28,400 - INFO - Stored answer #13: {'question': '13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:28,401 - INFO - Moving to next question. New index: 13
+2025-06-13 12:25:28,687 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 13
+2025-06-13 12:25:28,690 - INFO - Asking question #14: 14. Do you experience nausea or vomiting? (yes/no/maybe)
+2025-06-13 12:25:29,818 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 13
+2025-06-13 12:25:29,821 - INFO - Received patient response: no
+2025-06-13 12:25:29,821 - INFO - Stored answer #14: {'question': '14. Do you experience nausea or vomiting? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:29,821 - INFO - Moving to next question. New index: 14
+2025-06-13 12:25:30,109 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 14
+2025-06-13 12:25:30,110 - INFO - Asking question #15: 15. Do you have a metallic taste in your mouth? (yes/no/maybe)
+2025-06-13 12:25:30,908 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 14
+2025-06-13 12:25:30,908 - INFO - Received patient response: no
+2025-06-13 12:25:30,908 - INFO - Stored answer #15: {'question': '15. Do you have a metallic taste in your mouth? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:30,909 - INFO - Moving to next question. New index: 15
+2025-06-13 12:25:31,202 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 15
+2025-06-13 12:25:31,204 - INFO - Asking question #16: 16. Have you lost weight unintentionally? (yes/no/maybe)
+2025-06-13 12:25:33,061 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 15
+2025-06-13 12:25:33,062 - INFO - Received patient response: no
+2025-06-13 12:25:33,063 - INFO - Stored answer #16: {'question': '16. Have you lost weight unintentionally? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:33,064 - INFO - Moving to next question. New index: 16
+2025-06-13 12:25:33,342 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 16
+2025-06-13 12:25:33,342 - INFO - Asking question #17: 17. Do you experience persistent itching? (yes/no/maybe)
+2025-06-13 12:25:34,488 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 16
+2025-06-13 12:25:34,488 - INFO - Received patient response: no
+2025-06-13 12:25:34,491 - INFO - Stored answer #17: {'question': '17. Do you experience persistent itching? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:34,492 - INFO - Moving to next question. New index: 17
+2025-06-13 12:25:34,773 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 17
+2025-06-13 12:25:34,774 - INFO - Asking question #18: 18. Have you noticed any changes in your mental state? (none/confusion/memory problems)
+2025-06-13 12:25:35,650 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 17
+2025-06-13 12:25:35,653 - INFO - Received patient response: no
+2025-06-13 12:25:35,653 - INFO - Stored answer #18: {'question': '18. Have you noticed any changes in your mental state? (none/confusion/memory problems)', 'answer': 'no'}
+2025-06-13 12:25:35,655 - INFO - Moving to next question. New index: 18
+2025-06-13 12:25:35,951 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 18
+2025-06-13 12:25:35,951 - INFO - Asking question #19: 19. Do you have difficulty breathing? (yes/no/maybe)
+2025-06-13 12:25:36,947 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 18
+2025-06-13 12:25:36,948 - INFO - Received patient response: no
+2025-06-13 12:25:36,948 - INFO - Stored answer #19: {'question': '19. Do you have difficulty breathing? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:25:36,949 - INFO - Moving to next question. New index: 19
+2025-06-13 12:25:37,221 - INFO - Starting crew analysis with 19 patient responses
+2025-06-13 12:25:37,228 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:25:37,228 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:25:40,478 - INFO - Starting CrewAI execution...
+2025-06-13 12:25:40,504 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:25:42,500 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:25:42,503 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:25:42,534 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:25:42,801 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:25:42,802 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:25:42,814 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:25:46,939 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:25:46,944 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:25:46,962 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:25:51,749 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:25:51,751 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:25:51,781 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:25:55,674 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:25:55,678 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:25:55,748 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:26:00,666 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:26:00,669 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:26:00,726 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:26:04,647 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:26:04,652 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:26:04,712 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:26:11,737 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:26:11,742 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:26:11,769 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:26:18,642 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:26:18,647 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:26:18,694 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
+2025-06-13 12:26:18,694 - INFO - CrewOutput.raw length: 5517
+2025-06-13 12:26:18,695 - INFO - Found 2 tables in the assessment output
+2025-06-13 12:27:32,116 - INFO - Session reset by user
+2025-06-13 12:27:32,342 - INFO - Initialized current_question_index to 0
+2025-06-13 12:27:32,343 - INFO - Initialized collected_answers as empty list
+2025-06-13 12:27:32,343 - INFO - Updated questions list with 19 questions from prompts.py
+2025-06-13 12:27:32,344 - INFO - Initialized waiting_for_answer to False
+2025-06-13 12:27:32,344 - INFO - Initialized current_question as empty string
+2025-06-13 12:27:35,256 - INFO - Starting fresh QnA session with 19 questions
+2025-06-13 12:27:35,515 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 0
+2025-06-13 12:27:35,515 - INFO - Asking question #1: 1. What is your gender? (male/female/other)
+2025-06-13 12:27:38,277 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 0
+2025-06-13 12:27:38,278 - INFO - Received patient response: male
+2025-06-13 12:27:38,279 - INFO - Stored answer #1: {'question': '1. What is your gender? (male/female/other)', 'answer': 'male'}
+2025-06-13 12:27:38,279 - INFO - Moving to next question. New index: 1
+2025-06-13 12:27:38,553 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 1
+2025-06-13 12:27:38,554 - INFO - Asking question #2: 2. What is your current age?
+2025-06-13 12:27:40,281 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 1
+2025-06-13 12:27:40,281 - INFO - Received patient response: 65
+2025-06-13 12:27:40,282 - INFO - Stored answer #2: {'question': '2. What is your current age?', 'answer': '65'}
+2025-06-13 12:27:40,282 - INFO - Moving to next question. New index: 2
+2025-06-13 12:27:40,548 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 2
+2025-06-13 12:27:40,549 - INFO - Asking question #3: 3. Do you have high blood pressure (hypertension)? (yes/no/maybe)
+2025-06-13 12:27:43,457 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 2
+2025-06-13 12:27:43,458 - INFO - Received patient response: no
+2025-06-13 12:27:43,459 - INFO - Stored answer #3: {'question': '3. Do you have high blood pressure (hypertension)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:43,459 - INFO - Moving to next question. New index: 3
+2025-06-13 12:27:43,717 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 3
+2025-06-13 12:27:43,718 - INFO - Asking question #4: 4. Do you have Type 1 diabetes? (yes/no/maybe)
+2025-06-13 12:27:44,458 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 3
+2025-06-13 12:27:44,459 - INFO - Received patient response: no
+2025-06-13 12:27:44,460 - INFO - Stored answer #4: {'question': '4. Do you have Type 1 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:44,460 - INFO - Moving to next question. New index: 4
+2025-06-13 12:27:44,744 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 4
+2025-06-13 12:27:44,745 - INFO - Asking question #5: 5. Do you have Type 2 diabetes? (yes/no/maybe)
+2025-06-13 12:27:45,520 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 4
+2025-06-13 12:27:45,522 - INFO - Received patient response: no
+2025-06-13 12:27:45,522 - INFO - Stored answer #5: {'question': '5. Do you have Type 2 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:45,523 - INFO - Moving to next question. New index: 5
+2025-06-13 12:27:45,803 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 5
+2025-06-13 12:27:45,804 - INFO - Asking question #6: 6. Do you have any cardiovascular disease? (yes/no/maybe)
+2025-06-13 12:27:46,541 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 5
+2025-06-13 12:27:46,541 - INFO - Received patient response: no
+2025-06-13 12:27:46,541 - INFO - Stored answer #6: {'question': '6. Do you have any cardiovascular disease? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:46,542 - INFO - Moving to next question. New index: 6
+2025-06-13 12:27:46,839 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 6
+2025-06-13 12:27:46,840 - INFO - Asking question #7: 7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)
+2025-06-13 12:27:47,623 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 6
+2025-06-13 12:27:47,625 - INFO - Received patient response: no
+2025-06-13 12:27:47,625 - INFO - Stored answer #7: {'question': '7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)', 'answer': 'no'}
+2025-06-13 12:27:47,626 - INFO - Moving to next question. New index: 7
+2025-06-13 12:27:47,907 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 7
+2025-06-13 12:27:47,907 - INFO - Asking question #8: 8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)
+2025-06-13 12:27:48,514 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 7
+2025-06-13 12:27:48,516 - INFO - Received patient response: no
+2025-06-13 12:27:48,517 - INFO - Stored answer #8: {'question': '8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:48,518 - INFO - Moving to next question. New index: 8
+2025-06-13 12:27:48,790 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 8
+2025-06-13 12:27:48,792 - INFO - Asking question #9: 9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)
+2025-06-13 12:27:50,447 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 8
+2025-06-13 12:27:50,447 - INFO - Received patient response: no
+2025-06-13 12:27:50,448 - INFO - Stored answer #9: {'question': '9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:50,449 - INFO - Moving to next question. New index: 9
+2025-06-13 12:27:50,714 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 9
+2025-06-13 12:27:50,714 - INFO - Asking question #10: 10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)
+2025-06-13 12:27:51,921 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 9
+2025-06-13 12:27:51,923 - INFO - Received patient response: no
+2025-06-13 12:27:51,923 - INFO - Stored answer #10: {'question': '10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:51,924 - INFO - Moving to next question. New index: 10
+2025-06-13 12:27:52,227 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 10
+2025-06-13 12:27:52,228 - INFO - Asking question #11: 11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)
+2025-06-13 12:27:53,099 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 10
+2025-06-13 12:27:53,101 - INFO - Received patient response: no
+2025-06-13 12:27:53,102 - INFO - Stored answer #11: {'question': '11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:53,103 - INFO - Moving to next question. New index: 11
+2025-06-13 12:27:53,387 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 11
+2025-06-13 12:27:53,387 - INFO - Asking question #12: 12. Have you noticed a decrease in your urine output? (yes/no/maybe)
+2025-06-13 12:27:54,527 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 11
+2025-06-13 12:27:54,528 - INFO - Received patient response: no
+2025-06-13 12:27:54,528 - INFO - Stored answer #12: {'question': '12. Have you noticed a decrease in your urine output? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:54,529 - INFO - Moving to next question. New index: 12
+2025-06-13 12:27:54,783 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 12
+2025-06-13 12:27:54,784 - INFO - Asking question #13: 13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)
+2025-06-13 12:27:56,302 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 12
+2025-06-13 12:27:56,302 - INFO - Received patient response: no
+2025-06-13 12:27:56,302 - INFO - Stored answer #13: {'question': '13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:56,303 - INFO - Moving to next question. New index: 13
+2025-06-13 12:27:56,564 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 13
+2025-06-13 12:27:56,565 - INFO - Asking question #14: 14. Do you experience nausea or vomiting? (yes/no/maybe)
+2025-06-13 12:27:57,975 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 13
+2025-06-13 12:27:57,975 - INFO - Received patient response: no
+2025-06-13 12:27:57,975 - INFO - Stored answer #14: {'question': '14. Do you experience nausea or vomiting? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:57,977 - INFO - Moving to next question. New index: 14
+2025-06-13 12:27:58,259 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 14
+2025-06-13 12:27:58,259 - INFO - Asking question #15: 15. Do you have a metallic taste in your mouth? (yes/no/maybe)
+2025-06-13 12:27:59,181 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 14
+2025-06-13 12:27:59,182 - INFO - Received patient response: no
+2025-06-13 12:27:59,183 - INFO - Stored answer #15: {'question': '15. Do you have a metallic taste in your mouth? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:27:59,185 - INFO - Moving to next question. New index: 15
+2025-06-13 12:27:59,464 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 15
+2025-06-13 12:27:59,465 - INFO - Asking question #16: 16. Have you lost weight unintentionally? (yes/no/maybe)
+2025-06-13 12:28:00,942 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 15
+2025-06-13 12:28:00,942 - INFO - Received patient response: no
+2025-06-13 12:28:00,943 - INFO - Stored answer #16: {'question': '16. Have you lost weight unintentionally? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:28:00,944 - INFO - Moving to next question. New index: 16
+2025-06-13 12:28:01,243 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 16
+2025-06-13 12:28:01,244 - INFO - Asking question #17: 17. Do you experience persistent itching? (yes/no/maybe)
+2025-06-13 12:28:02,264 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 16
+2025-06-13 12:28:02,268 - INFO - Received patient response: no
+2025-06-13 12:28:02,268 - INFO - Stored answer #17: {'question': '17. Do you experience persistent itching? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:28:02,269 - INFO - Moving to next question. New index: 17
+2025-06-13 12:28:02,550 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 17
+2025-06-13 12:28:02,550 - INFO - Asking question #18: 18. Have you noticed any changes in your mental state? (none/confusion/memory problems)
+2025-06-13 12:28:04,165 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 17
+2025-06-13 12:28:04,166 - INFO - Received patient response: no
+2025-06-13 12:28:04,166 - INFO - Stored answer #18: {'question': '18. Have you noticed any changes in your mental state? (none/confusion/memory problems)', 'answer': 'no'}
+2025-06-13 12:28:04,166 - INFO - Moving to next question. New index: 18
+2025-06-13 12:28:04,448 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 18
+2025-06-13 12:28:04,449 - INFO - Asking question #19: 19. Do you have difficulty breathing? (yes/no/maybe)
+2025-06-13 12:28:05,604 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 18
+2025-06-13 12:28:05,604 - INFO - Received patient response: no
+2025-06-13 12:28:05,606 - INFO - Stored answer #19: {'question': '19. Do you have difficulty breathing? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:28:05,607 - INFO - Moving to next question. New index: 19
+2025-06-13 12:28:05,889 - INFO - Starting crew analysis with 19 patient responses
+2025-06-13 12:28:05,897 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:28:05,898 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:28:08,614 - INFO - Starting CrewAI execution...
+2025-06-13 12:28:08,639 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:28:12,388 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:28:12,392 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:28:12,407 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:28:16,435 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:28:16,445 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:28:16,480 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:28:19,047 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:28:19,051 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:28:19,102 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:28:23,573 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:28:23,577 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:28:23,633 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:28:28,141 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:28:28,146 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:28:28,197 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:28:35,307 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:28:35,312 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:28:35,369 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
+2025-06-13 12:28:35,370 - INFO - CrewOutput.raw length: 5887
+2025-06-13 12:28:35,370 - INFO - Found 2 tables in the assessment output
+2025-06-13 12:31:59,099 - INFO - Session reset by user
+2025-06-13 12:31:59,351 - INFO - Initialized current_question_index to 0
+2025-06-13 12:31:59,352 - INFO - Initialized collected_answers as empty list
+2025-06-13 12:31:59,352 - INFO - Updated questions list with 19 questions from prompts.py
+2025-06-13 12:31:59,353 - INFO - Initialized waiting_for_answer to False
+2025-06-13 12:31:59,354 - INFO - Initialized current_question as empty string
+2025-06-13 12:32:03,037 - INFO - Starting fresh QnA session with 19 questions
+2025-06-13 12:32:03,303 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 0
+2025-06-13 12:32:03,304 - INFO - Asking question #1: 1. What is your gender? (male/female/other)
+2025-06-13 12:32:25,951 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 0
+2025-06-13 12:32:25,952 - INFO - Received patient response: male
+2025-06-13 12:32:25,953 - INFO - Stored answer #1: {'question': '1. What is your gender? (male/female/other)', 'answer': 'male'}
+2025-06-13 12:32:25,953 - INFO - Moving to next question. New index: 1
+2025-06-13 12:32:26,213 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 1
+2025-06-13 12:32:26,215 - INFO - Asking question #2: 2. What is your current age?
+2025-06-13 12:32:28,750 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 1
+2025-06-13 12:32:28,750 - INFO - Received patient response: 65
+2025-06-13 12:32:28,750 - INFO - Stored answer #2: {'question': '2. What is your current age?', 'answer': '65'}
+2025-06-13 12:32:28,751 - INFO - Moving to next question. New index: 2
+2025-06-13 12:32:29,015 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 2
+2025-06-13 12:32:29,016 - INFO - Asking question #3: 3. Do you have high blood pressure (hypertension)? (yes/no/maybe)
+2025-06-13 12:32:31,243 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 2
+2025-06-13 12:32:31,243 - INFO - Received patient response: no
+2025-06-13 12:32:31,243 - INFO - Stored answer #3: {'question': '3. Do you have high blood pressure (hypertension)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:31,245 - INFO - Moving to next question. New index: 3
+2025-06-13 12:32:31,509 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 3
+2025-06-13 12:32:31,510 - INFO - Asking question #4: 4. Do you have Type 1 diabetes? (yes/no/maybe)
+2025-06-13 12:32:32,059 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 3
+2025-06-13 12:32:32,060 - INFO - Received patient response: no
+2025-06-13 12:32:32,060 - INFO - Stored answer #4: {'question': '4. Do you have Type 1 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:32,061 - INFO - Moving to next question. New index: 4
+2025-06-13 12:32:32,344 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 4
+2025-06-13 12:32:32,345 - INFO - Asking question #5: 5. Do you have Type 2 diabetes? (yes/no/maybe)
+2025-06-13 12:32:32,945 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 4
+2025-06-13 12:32:32,946 - INFO - Received patient response: no
+2025-06-13 12:32:32,949 - INFO - Stored answer #5: {'question': '5. Do you have Type 2 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:32,953 - INFO - Moving to next question. New index: 5
+2025-06-13 12:32:33,229 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 5
+2025-06-13 12:32:33,230 - INFO - Asking question #6: 6. Do you have any cardiovascular disease? (yes/no/maybe)
+2025-06-13 12:32:33,768 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 5
+2025-06-13 12:32:33,768 - INFO - Received patient response: no
+2025-06-13 12:32:33,769 - INFO - Stored answer #6: {'question': '6. Do you have any cardiovascular disease? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:33,770 - INFO - Moving to next question. New index: 6
+2025-06-13 12:32:34,032 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 6
+2025-06-13 12:32:34,033 - INFO - Asking question #7: 7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)
+2025-06-13 12:32:36,411 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 6
+2025-06-13 12:32:36,412 - INFO - Received patient response: v
+2025-06-13 12:32:36,418 - INFO - Stored answer #7: {'question': '7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)', 'answer': 'v'}
+2025-06-13 12:32:36,418 - INFO - Moving to next question. New index: 7
+2025-06-13 12:32:36,673 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 7
+2025-06-13 12:32:36,674 - INFO - Asking question #8: 8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)
+2025-06-13 12:32:37,723 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 7
+2025-06-13 12:32:37,725 - INFO - Received patient response: no
+2025-06-13 12:32:37,725 - INFO - Stored answer #8: {'question': '8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:37,726 - INFO - Moving to next question. New index: 8
+2025-06-13 12:32:38,001 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 8
+2025-06-13 12:32:38,001 - INFO - Asking question #9: 9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)
+2025-06-13 12:32:39,097 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 8
+2025-06-13 12:32:39,097 - INFO - Received patient response: no
+2025-06-13 12:32:39,097 - INFO - Stored answer #9: {'question': '9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:39,097 - INFO - Moving to next question. New index: 9
+2025-06-13 12:32:39,375 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 9
+2025-06-13 12:32:39,375 - INFO - Asking question #10: 10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)
+2025-06-13 12:32:40,495 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 9
+2025-06-13 12:32:40,496 - INFO - Received patient response: no
+2025-06-13 12:32:40,497 - INFO - Stored answer #10: {'question': '10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:40,498 - INFO - Moving to next question. New index: 10
+2025-06-13 12:32:40,777 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 10
+2025-06-13 12:32:40,779 - INFO - Asking question #11: 11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)
+2025-06-13 12:32:42,056 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 10
+2025-06-13 12:32:42,056 - INFO - Received patient response: no
+2025-06-13 12:32:42,056 - INFO - Stored answer #11: {'question': '11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:42,057 - INFO - Moving to next question. New index: 11
+2025-06-13 12:32:42,319 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 11
+2025-06-13 12:32:42,320 - INFO - Asking question #12: 12. Have you noticed a decrease in your urine output? (yes/no/maybe)
+2025-06-13 12:32:43,381 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 11
+2025-06-13 12:32:43,381 - INFO - Received patient response: no
+2025-06-13 12:32:43,381 - INFO - Stored answer #12: {'question': '12. Have you noticed a decrease in your urine output? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:43,381 - INFO - Moving to next question. New index: 12
+2025-06-13 12:32:43,657 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 12
+2025-06-13 12:32:43,657 - INFO - Asking question #13: 13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)
+2025-06-13 12:32:45,231 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 12
+2025-06-13 12:32:45,231 - INFO - Received patient response: no
+2025-06-13 12:32:45,233 - INFO - Stored answer #13: {'question': '13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:45,234 - INFO - Moving to next question. New index: 13
+2025-06-13 12:32:45,515 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 13
+2025-06-13 12:32:45,516 - INFO - Asking question #14: 14. Do you experience nausea or vomiting? (yes/no/maybe)
+2025-06-13 12:32:47,000 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 13
+2025-06-13 12:32:47,001 - INFO - Received patient response: no
+2025-06-13 12:32:47,002 - INFO - Stored answer #14: {'question': '14. Do you experience nausea or vomiting? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:47,003 - INFO - Moving to next question. New index: 14
+2025-06-13 12:32:47,279 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 14
+2025-06-13 12:32:47,281 - INFO - Asking question #15: 15. Do you have a metallic taste in your mouth? (yes/no/maybe)
+2025-06-13 12:32:51,388 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 14
+2025-06-13 12:32:51,389 - INFO - Received patient response: no
+2025-06-13 12:32:51,389 - INFO - Stored answer #15: {'question': '15. Do you have a metallic taste in your mouth? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:51,390 - INFO - Moving to next question. New index: 15
+2025-06-13 12:32:51,661 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 15
+2025-06-13 12:32:51,661 - INFO - Asking question #16: 16. Have you lost weight unintentionally? (yes/no/maybe)
+2025-06-13 12:32:52,969 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 15
+2025-06-13 12:32:52,972 - INFO - Received patient response: no
+2025-06-13 12:32:52,973 - INFO - Stored answer #16: {'question': '16. Have you lost weight unintentionally? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:32:52,973 - INFO - Moving to next question. New index: 16
+2025-06-13 12:32:53,254 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 16
+2025-06-13 12:32:53,255 - INFO - Asking question #17: 17. Do you experience persistent itching? (yes/no/maybe)
+2025-06-13 12:32:54,488 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 16
+2025-06-13 12:32:54,488 - INFO - Received patient response: v
+2025-06-13 12:32:54,488 - INFO - Stored answer #17: {'question': '17. Do you experience persistent itching? (yes/no/maybe)', 'answer': 'v'}
+2025-06-13 12:32:54,488 - INFO - Moving to next question. New index: 17
+2025-06-13 12:32:54,764 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 17
+2025-06-13 12:32:54,765 - INFO - Asking question #18: 18. Have you noticed any changes in your mental state? (none/confusion/memory problems)
+2025-06-13 12:32:57,567 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 17
+2025-06-13 12:32:57,568 - INFO - Received patient response: no
+2025-06-13 12:32:57,568 - INFO - Stored answer #18: {'question': '18. Have you noticed any changes in your mental state? (none/confusion/memory problems)', 'answer': 'no'}
+2025-06-13 12:32:57,569 - INFO - Moving to next question. New index: 18
+2025-06-13 12:32:57,846 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 18
+2025-06-13 12:32:57,846 - INFO - Asking question #19: 19. Do you have difficulty breathing? (yes/no/maybe)
+2025-06-13 12:33:00,682 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 18
+2025-06-13 12:33:00,682 - INFO - Received patient response: no
+2025-06-13 12:33:00,683 - INFO - Stored answer #19: {'question': '19. Do you have difficulty breathing? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:33:00,684 - INFO - Moving to next question. New index: 19
+2025-06-13 12:33:00,959 - INFO - Starting crew analysis with 19 patient responses
+2025-06-13 12:33:00,972 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:33:00,972 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:33:13,971 - INFO - Starting CrewAI execution...
+2025-06-13 12:33:14,008 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:16,463 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:16,467 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:16,489 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 19
+2025-06-13 12:33:16,489 - INFO - All questions completed!
+2025-06-13 12:33:16,490 - INFO - Final collected answers JSON:
+[
+  {
+    "question": "1. What is your gender? (male/female/other)",
+    "answer": "male"
+  },
+  {
+    "question": "2. What is your current age?",
+    "answer": "65"
+  },
+  {
+    "question": "3. Do you have high blood pressure (hypertension)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "4. Do you have Type 1 diabetes? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "5. Do you have Type 2 diabetes? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "6. Do you have any cardiovascular disease? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)",
+    "answer": "v"
+  },
+  {
+    "question": "8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "12. Have you noticed a decrease in your urine output? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "14. Do you experience nausea or vomiting? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "15. Do you have a metallic taste in your mouth? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "16. Have you lost weight unintentionally? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "17. Do you experience persistent itching? (yes/no/maybe)",
+    "answer": "v"
+  },
+  {
+    "question": "18. Have you noticed any changes in your mental state? (none/confusion/memory problems)",
+    "answer": "no"
+  },
+  {
+    "question": "19. Do you have difficulty breathing? (yes/no/maybe)",
+    "answer": "no"
+  }
+]
+2025-06-13 12:33:16,490 - INFO - Total answers collected: 19
+2025-06-13 12:33:16,500 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:16,829 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:16,833 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:16,858 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:18,992 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:18,997 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:19,019 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 19
+2025-06-13 12:33:19,021 - INFO - All questions completed!
+2025-06-13 12:33:19,022 - INFO - Final collected answers JSON:
+[
+  {
+    "question": "1. What is your gender? (male/female/other)",
+    "answer": "male"
+  },
+  {
+    "question": "2. What is your current age?",
+    "answer": "65"
+  },
+  {
+    "question": "3. Do you have high blood pressure (hypertension)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "4. Do you have Type 1 diabetes? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "5. Do you have Type 2 diabetes? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "6. Do you have any cardiovascular disease? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)",
+    "answer": "v"
+  },
+  {
+    "question": "8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "12. Have you noticed a decrease in your urine output? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "14. Do you experience nausea or vomiting? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "15. Do you have a metallic taste in your mouth? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "16. Have you lost weight unintentionally? (yes/no/maybe)",
+    "answer": "no"
+  },
+  {
+    "question": "17. Do you experience persistent itching? (yes/no/maybe)",
+    "answer": "v"
+  },
+  {
+    "question": "18. Have you noticed any changes in your mental state? (none/confusion/memory problems)",
+    "answer": "no"
+  },
+  {
+    "question": "19. Do you have difficulty breathing? (yes/no/maybe)",
+    "answer": "no"
+  }
+]
+2025-06-13 12:33:19,024 - INFO - Total answers collected: 19
+2025-06-13 12:33:19,044 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:19,344 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:19,347 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:19,373 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:23,315 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:23,319 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:23,332 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:26,829 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:26,832 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:26,891 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:30,172 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:30,177 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:30,236 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:34,496 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:34,500 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:34,570 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:38,828 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:38,829 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:38,872 - INFO - 
+LiteLLM completion() model= deepseek-r1-distill-llama-70b; provider = groq
+2025-06-13 12:33:45,289 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:33:45,290 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:33:45,321 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
+2025-06-13 12:33:45,321 - INFO - CrewOutput.raw length: 5414
+2025-06-13 12:33:45,322 - INFO - Found 2 tables in the assessment output
+2025-06-13 12:35:25,634 - INFO - Initialized current_question_index to 0
+2025-06-13 12:35:25,635 - INFO - Initialized collected_answers as empty list
+2025-06-13 12:35:25,636 - INFO - Updated questions list with 19 questions from prompts.py
+2025-06-13 12:35:25,636 - INFO - Initialized waiting_for_answer to False
+2025-06-13 12:35:25,638 - INFO - Initialized current_question as empty string
+2025-06-13 12:35:28,334 - INFO - Starting fresh QnA session with 19 questions
+2025-06-13 12:35:28,465 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 0
+2025-06-13 12:35:28,465 - INFO - Asking question #1: 1. What is your gender? (male/female/other)
+2025-06-13 12:35:35,788 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 0
+2025-06-13 12:35:35,788 - INFO - Received patient response: male
+2025-06-13 12:35:35,789 - INFO - Stored answer #1: {'question': '1. What is your gender? (male/female/other)', 'answer': 'male'}
+2025-06-13 12:35:35,789 - INFO - Moving to next question. New index: 1
+2025-06-13 12:35:35,918 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 1
+2025-06-13 12:35:35,919 - INFO - Asking question #2: 2. What is your current age?
+2025-06-13 12:35:41,200 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 1
+2025-06-13 12:35:41,201 - INFO - Received patient response: 80
+2025-06-13 12:35:41,202 - INFO - Stored answer #2: {'question': '2. What is your current age?', 'answer': '80'}
+2025-06-13 12:35:41,204 - INFO - Moving to next question. New index: 2
+2025-06-13 12:35:41,339 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 2
+2025-06-13 12:35:41,340 - INFO - Asking question #3: 3. Do you have high blood pressure (hypertension)? (yes/no/maybe)
+2025-06-13 12:35:43,594 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 2
+2025-06-13 12:35:43,596 - INFO - Received patient response: no
+2025-06-13 12:35:43,599 - INFO - Stored answer #3: {'question': '3. Do you have high blood pressure (hypertension)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:43,600 - INFO - Moving to next question. New index: 3
+2025-06-13 12:35:43,733 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 3
+2025-06-13 12:35:43,733 - INFO - Asking question #4: 4. Do you have Type 1 diabetes? (yes/no/maybe)
+2025-06-13 12:35:44,982 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 3
+2025-06-13 12:35:44,984 - INFO - Received patient response: no
+2025-06-13 12:35:44,985 - INFO - Stored answer #4: {'question': '4. Do you have Type 1 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:44,985 - INFO - Moving to next question. New index: 4
+2025-06-13 12:35:45,139 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 4
+2025-06-13 12:35:45,140 - INFO - Asking question #5: 5. Do you have Type 2 diabetes? (yes/no/maybe)
+2025-06-13 12:35:46,023 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 4
+2025-06-13 12:35:46,023 - INFO - Received patient response: no
+2025-06-13 12:35:46,027 - INFO - Stored answer #5: {'question': '5. Do you have Type 2 diabetes? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:46,027 - INFO - Moving to next question. New index: 5
+2025-06-13 12:35:46,180 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 5
+2025-06-13 12:35:46,181 - INFO - Asking question #6: 6. Do you have any cardiovascular disease? (yes/no/maybe)
+2025-06-13 12:35:47,134 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 5
+2025-06-13 12:35:47,136 - INFO - Received patient response: no
+2025-06-13 12:35:47,136 - INFO - Stored answer #6: {'question': '6. Do you have any cardiovascular disease? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:47,137 - INFO - Moving to next question. New index: 6
+2025-06-13 12:35:47,281 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 6
+2025-06-13 12:35:47,284 - INFO - Asking question #7: 7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)
+2025-06-13 12:35:48,195 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 6
+2025-06-13 12:35:48,196 - INFO - Received patient response: no
+2025-06-13 12:35:48,197 - INFO - Stored answer #7: {'question': '7. Have you noticed any changes in your appetite? (increased/decreased/unchanged)', 'answer': 'no'}
+2025-06-13 12:35:48,198 - INFO - Moving to next question. New index: 7
+2025-06-13 12:35:48,335 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 7
+2025-06-13 12:35:48,335 - INFO - Asking question #8: 8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)
+2025-06-13 12:35:49,296 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 7
+2025-06-13 12:35:49,296 - INFO - Received patient response: no
+2025-06-13 12:35:49,297 - INFO - Stored answer #8: {'question': '8. Do you have swelling in your feet and ankles (pedal edema)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:49,298 - INFO - Moving to next question. New index: 8
+2025-06-13 12:35:49,452 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 8
+2025-06-13 12:35:49,460 - INFO - Asking question #9: 9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)
+2025-06-13 12:35:50,514 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 8
+2025-06-13 12:35:50,515 - INFO - Received patient response: no
+2025-06-13 12:35:50,516 - INFO - Stored answer #9: {'question': '9. Have you noticed blood in your urine (hematuria)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:50,517 - INFO - Moving to next question. New index: 9
+2025-06-13 12:35:50,659 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 9
+2025-06-13 12:35:50,660 - INFO - Asking question #10: 10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)
+2025-06-13 12:35:51,657 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 9
+2025-06-13 12:35:51,659 - INFO - Received patient response: no
+2025-06-13 12:35:51,660 - INFO - Stored answer #10: {'question': '10. Do you wake up frequently at night to urinate (nocturia)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:51,662 - INFO - Moving to next question. New index: 10
+2025-06-13 12:35:51,811 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 10
+2025-06-13 12:35:51,813 - INFO - Asking question #11: 11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)
+2025-06-13 12:35:52,743 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 10
+2025-06-13 12:35:52,743 - INFO - Received patient response: no
+2025-06-13 12:35:52,743 - INFO - Stored answer #11: {'question': '11. Do you experience pain in your side or back (flank discomfort)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:52,744 - INFO - Moving to next question. New index: 11
+2025-06-13 12:35:52,891 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 11
+2025-06-13 12:35:52,892 - INFO - Asking question #12: 12. Have you noticed a decrease in your urine output? (yes/no/maybe)
+2025-06-13 12:35:53,657 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 11
+2025-06-13 12:35:53,658 - INFO - Received patient response: no
+2025-06-13 12:35:53,660 - INFO - Stored answer #12: {'question': '12. Have you noticed a decrease in your urine output? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:53,668 - INFO - Moving to next question. New index: 12
+2025-06-13 12:35:53,825 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 12
+2025-06-13 12:35:53,826 - INFO - Asking question #13: 13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)
+2025-06-13 12:35:54,702 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 12
+2025-06-13 12:35:54,704 - INFO - Received patient response: no
+2025-06-13 12:35:54,704 - INFO - Stored answer #13: {'question': '13. Do you feel unusually tired or weak (fatigue)? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:54,706 - INFO - Moving to next question. New index: 13
+2025-06-13 12:35:54,854 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 13
+2025-06-13 12:35:54,855 - INFO - Asking question #14: 14. Do you experience nausea or vomiting? (yes/no/maybe)
+2025-06-13 12:35:56,899 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 13
+2025-06-13 12:35:56,901 - INFO - Received patient response: no
+2025-06-13 12:35:56,902 - INFO - Stored answer #14: {'question': '14. Do you experience nausea or vomiting? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:56,903 - INFO - Moving to next question. New index: 14
+2025-06-13 12:35:57,067 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 14
+2025-06-13 12:35:57,070 - INFO - Asking question #15: 15. Do you have a metallic taste in your mouth? (yes/no/maybe)
+2025-06-13 12:35:58,098 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 14
+2025-06-13 12:35:58,099 - INFO - Received patient response: no
+2025-06-13 12:35:58,100 - INFO - Stored answer #15: {'question': '15. Do you have a metallic taste in your mouth? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:58,101 - INFO - Moving to next question. New index: 15
+2025-06-13 12:35:58,249 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 15
+2025-06-13 12:35:58,249 - INFO - Asking question #16: 16. Have you lost weight unintentionally? (yes/no/maybe)
+2025-06-13 12:35:59,175 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 15
+2025-06-13 12:35:59,176 - INFO - Received patient response: no
+2025-06-13 12:35:59,178 - INFO - Stored answer #16: {'question': '16. Have you lost weight unintentionally? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:35:59,184 - INFO - Moving to next question. New index: 16
+2025-06-13 12:35:59,328 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 16
+2025-06-13 12:35:59,329 - INFO - Asking question #17: 17. Do you experience persistent itching? (yes/no/maybe)
+2025-06-13 12:36:00,261 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 16
+2025-06-13 12:36:00,263 - INFO - Received patient response: no
+2025-06-13 12:36:00,264 - INFO - Stored answer #17: {'question': '17. Do you experience persistent itching? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:36:00,264 - INFO - Moving to next question. New index: 17
+2025-06-13 12:36:00,422 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 17
+2025-06-13 12:36:00,422 - INFO - Asking question #18: 18. Have you noticed any changes in your mental state? (none/confusion/memory problems)
+2025-06-13 12:36:01,359 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 17
+2025-06-13 12:36:01,359 - INFO - Received patient response: no
+2025-06-13 12:36:01,360 - INFO - Stored answer #18: {'question': '18. Have you noticed any changes in your mental state? (none/confusion/memory problems)', 'answer': 'no'}
+2025-06-13 12:36:01,361 - INFO - Moving to next question. New index: 18
+2025-06-13 12:36:01,510 - INFO - QuestionAsker._run called - waiting_for_answer: False, current_question_index: 18
+2025-06-13 12:36:01,512 - INFO - Asking question #19: 19. Do you have difficulty breathing? (yes/no/maybe)
+2025-06-13 12:36:02,295 - INFO - QuestionAsker._run called - waiting_for_answer: True, current_question_index: 18
+2025-06-13 12:36:02,295 - INFO - Received patient response: no
+2025-06-13 12:36:02,297 - INFO - Stored answer #19: {'question': '19. Do you have difficulty breathing? (yes/no/maybe)', 'answer': 'no'}
+2025-06-13 12:36:02,298 - INFO - Moving to next question. New index: 19
+2025-06-13 12:36:02,455 - INFO - Starting crew analysis with 19 patient responses
+2025-06-13 12:36:06,510 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:36:06,510 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:36:10,004 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-13 12:36:10,141 - INFO - Starting CrewAI execution...
+2025-06-13 12:36:10,162 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:36:25,594 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:36:25,599 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:36:25,621 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:36:28,256 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:36:28,261 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:36:28,323 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:36:30,886 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:36:30,891 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:36:30,934 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:36:35,220 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:36:35,224 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:36:35,259 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:36:35,259 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:36:38,176 - INFO - Searching medical knowledge for: CKD risk factors using groq embeddings
+2025-06-13 12:36:38,237 - INFO - Found 5 relevant documents for query: CKD risk factors
+2025-06-13 12:36:38,243 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:36:51,323 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:36:51,324 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:36:51,333 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:36:51,334 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:36:54,625 - INFO - Searching medical knowledge for: CKD risk assessment using groq embeddings
+2025-06-13 12:36:54,658 - INFO - Found 5 relevant documents for query: CKD risk assessment
+2025-06-13 12:36:54,667 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:11,455 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:11,459 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:11,488 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:37:11,488 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:37:14,289 - INFO - Searching medical knowledge for: CKD risk assessment age 80 using groq embeddings
+2025-06-13 12:37:14,304 - INFO - Found 5 relevant documents for query: CKD risk assessment age 80
+2025-06-13 12:37:14,314 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:17,638 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:17,643 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:17,684 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:30,321 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:30,325 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:30,354 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:36,944 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:36,948 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:36,982 - INFO - Use pytorch device_name: cpu
+2025-06-13 12:37:36,982 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 12:37:39,646 - INFO - Searching medical knowledge for: CKD risk percentage calculation using groq embeddings
+2025-06-13 12:37:39,680 - INFO - Found 5 relevant documents for query: CKD risk percentage calculation
+2025-06-13 12:37:39,689 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:44,106 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:44,110 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:44,163 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:48,674 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:48,679 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:48,740 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 12:37:58,357 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 12:37:58,363 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 12:37:58,433 - INFO - CrewAI execution completed successfully. Result type: <class 'crewai.crews.crew_output.CrewOutput'>
+2025-06-13 12:37:58,433 - INFO - CrewOutput.raw length: 11226
+2025-06-13 12:37:58,437 - INFO - Found 2 tables in the assessment output
+2025-06-13 13:00:28,923 - INFO - Starting CKD Assessment Testing Script
+2025-06-13 13:00:28,923 - INFO - Initialized scenario generator with groq/llama
+2025-06-13 13:00:28,924 - INFO - Loaded 19 questions for testing
+2025-06-13 13:00:28,924 - INFO - Initialized workflow tester with groq/llama
+2025-06-13 13:00:28,924 - INFO - Using embedder: huggingface
+2025-06-13 13:00:28,924 - INFO - Results will be exported to: /home/prashanth/ishan/workspace/ckd/output
+2025-06-13 13:00:28,924 - INFO - Running simulation 1/5
+2025-06-13 13:00:28,924 - INFO - Generating patient responses...
+2025-06-13 13:00:28,924 - INFO - Generating text responses for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:00:28,928 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:00:30,694 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:00:30,698 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:00:30,702 - INFO - Generated response length: 1691 characters
+2025-06-13 13:00:30,703 - INFO - Successfully parsed 19 responses
+2025-06-13 13:00:30,703 - INFO - Running CKD assessment...
+2025-06-13 13:00:30,703 - INFO - Starting assessment for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:00:30,742 - INFO - Running CrewAI workflow...
+2025-06-13 13:00:30,764 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:00:32,850 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:00:32,851 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:00:32,867 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:00:35,677 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:00:35,679 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:00:35,697 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:00:42,517 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:00:42,520 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:00:46,000 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:00:46,000 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:00:50,110 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-13 13:00:50,201 - INFO - Searching medical knowledge for: KDIGO guidelines for CKD risk assessment using groq embeddings
+2025-06-13 13:00:50,240 - INFO - Found 5 relevant documents for query: KDIGO guidelines for CKD risk assessment
+2025-06-13 13:00:50,242 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:20,876 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:20,879 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:20,880 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:24,928 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:24,931 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:24,954 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:29,459 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:29,462 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:29,484 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:37,521 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:37,524 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:37,542 - INFO - Assessment completed in 66.84 seconds
+2025-06-13 13:01:37,542 - INFO - Exporting results...
+2025-06-13 13:01:37,543 - INFO - Exported assessment to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim001_20250613_130137.md
+2025-06-13 13:01:37,543 - INFO - Simulation 1 completed. Results saved to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim001_20250613_130137.md
+2025-06-13 13:01:37,543 - INFO - Running simulation 2/5
+2025-06-13 13:01:37,543 - INFO - Generating patient responses...
+2025-06-13 13:01:37,544 - INFO - Generating text responses for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:01:37,544 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:39,307 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:39,310 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:39,311 - INFO - Generated response length: 1688 characters
+2025-06-13 13:01:39,313 - INFO - Successfully parsed 19 responses
+2025-06-13 13:01:39,313 - INFO - Running CKD assessment...
+2025-06-13 13:01:39,313 - INFO - Starting assessment for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:01:39,349 - INFO - Running CrewAI workflow...
+2025-06-13 13:01:39,369 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:41,403 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:41,406 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:41,424 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:44,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:44,423 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:44,446 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:01:49,719 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:01:49,722 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:01:49,725 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:01:49,725 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:01:52,479 - INFO - Searching medical knowledge for: CKD risk factors using groq embeddings
+2025-06-13 13:01:52,494 - INFO - Found 5 relevant documents for query: CKD risk factors
+2025-06-13 13:01:52,497 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:02:01,507 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:02:01,508 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:02:01,510 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:02:01,510 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:02:04,140 - INFO - Searching medical knowledge for: hypertension as a risk factor for CKD using groq embeddings
+2025-06-13 13:02:04,167 - INFO - Found 5 relevant documents for query: hypertension as a risk factor for CKD
+2025-06-13 13:02:04,170 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:02:26,355 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:02:26,358 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:02:26,361 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:02:26,361 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:02:29,065 - INFO - Searching medical knowledge for: nocturia as a risk factor for CKD using groq embeddings
+2025-06-13 13:02:29,090 - INFO - Found 5 relevant documents for query: nocturia as a risk factor for CKD
+2025-06-13 13:02:29,092 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:02:47,375 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:02:47,378 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:02:47,381 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:02:47,381 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:02:50,235 - INFO - Searching medical knowledge for: flank discomfort as a risk factor for CKD using groq embeddings
+2025-06-13 13:02:50,278 - INFO - Found 5 relevant documents for query: flank discomfort as a risk factor for CKD
+2025-06-13 13:02:50,282 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:00,452 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:00,455 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:00,462 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:03:00,462 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:03:03,157 - INFO - Searching medical knowledge for: fatigue as a risk factor for CKD using groq embeddings
+2025-06-13 13:03:03,182 - INFO - Found 5 relevant documents for query: fatigue as a risk factor for CKD
+2025-06-13 13:03:03,184 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:06,803 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:06,804 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:06,817 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:10,218 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:10,220 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:10,239 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:16,193 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:16,196 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:16,211 - INFO - Assessment completed in 96.90 seconds
+2025-06-13 13:03:16,211 - INFO - Exporting results...
+2025-06-13 13:03:16,212 - INFO - Exported assessment to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim002_20250613_130316.md
+2025-06-13 13:03:16,212 - INFO - Simulation 2 completed. Results saved to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim002_20250613_130316.md
+2025-06-13 13:03:16,212 - INFO - Running simulation 3/5
+2025-06-13 13:03:16,212 - INFO - Generating patient responses...
+2025-06-13 13:03:16,213 - INFO - Generating text responses for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:03:16,214 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:18,003 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:18,005 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:18,005 - INFO - Generated response length: 1741 characters
+2025-06-13 13:03:18,005 - INFO - Successfully parsed 19 responses
+2025-06-13 13:03:18,005 - INFO - Running CKD assessment...
+2025-06-13 13:03:18,005 - INFO - Starting assessment for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:03:18,035 - INFO - Running CrewAI workflow...
+2025-06-13 13:03:18,054 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:20,122 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:20,128 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:20,140 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:23,396 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:23,398 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:23,419 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:27,540 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:27,543 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:27,546 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:03:27,546 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:03:30,231 - INFO - Searching medical knowledge for: CKD risk factors using groq embeddings
+2025-06-13 13:03:30,246 - INFO - Found 5 relevant documents for query: CKD risk factors
+2025-06-13 13:03:30,250 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:39,880 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:39,883 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:39,886 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:03:39,886 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:03:42,649 - INFO - Searching medical knowledge for: hypertension and CKD risk using groq embeddings
+2025-06-13 13:03:42,665 - INFO - Found 5 relevant documents for query: hypertension and CKD risk
+2025-06-13 13:03:42,668 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:03:55,114 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:03:55,117 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:03:55,120 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:03:55,120 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:03:57,927 - INFO - Searching medical knowledge for: flank discomfort and CKD risk using groq embeddings
+2025-06-13 13:03:57,939 - INFO - Found 5 relevant documents for query: flank discomfort and CKD risk
+2025-06-13 13:03:57,943 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:11,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:11,620 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:11,623 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:04:11,624 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:04:14,954 - INFO - Searching medical knowledge for: fatigue and CKD risk using groq embeddings
+2025-06-13 13:04:14,969 - INFO - Found 5 relevant documents for query: fatigue and CKD risk
+2025-06-13 13:04:14,972 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:23,555 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:23,558 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:23,561 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:04:23,561 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:04:26,664 - INFO - Searching medical knowledge for: cardiovascular disease and CKD risk using groq embeddings
+2025-06-13 13:04:26,688 - INFO - Found 5 relevant documents for query: cardiovascular disease and CKD risk
+2025-06-13 13:04:26,691 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:30,602 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:30,605 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:30,622 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:34,108 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:34,112 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:34,130 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:40,298 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:40,301 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:40,316 - INFO - Assessment completed in 82.31 seconds
+2025-06-13 13:04:40,316 - INFO - Exporting results...
+2025-06-13 13:04:40,317 - INFO - Exported assessment to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim003_20250613_130440.md
+2025-06-13 13:04:40,317 - INFO - Simulation 3 completed. Results saved to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim003_20250613_130440.md
+2025-06-13 13:04:40,317 - INFO - Running simulation 4/5
+2025-06-13 13:04:40,317 - INFO - Generating patient responses...
+2025-06-13 13:04:40,317 - INFO - Generating text responses for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:04:40,318 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:42,178 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:42,181 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:42,182 - INFO - Generated response length: 1840 characters
+2025-06-13 13:04:42,182 - INFO - Successfully parsed 19 responses
+2025-06-13 13:04:42,183 - INFO - Running CKD assessment...
+2025-06-13 13:04:42,183 - INFO - Starting assessment for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:04:42,201 - INFO - Running CrewAI workflow...
+2025-06-13 13:04:42,220 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:44,249 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:44,252 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:44,270 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:47,090 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:47,091 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:47,107 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:04:53,978 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:04:53,980 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:04:53,983 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:04:53,983 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:04:56,552 - INFO - Searching medical knowledge for: CKD risk factors using groq embeddings
+2025-06-13 13:04:56,576 - INFO - Found 5 relevant documents for query: CKD risk factors
+2025-06-13 13:04:56,579 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:08,215 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:08,218 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:08,221 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:05:08,221 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:05:11,099 - INFO - Searching medical knowledge for: hypertension and CKD risk using groq embeddings
+2025-06-13 13:05:11,115 - INFO - Found 5 relevant documents for query: hypertension and CKD risk
+2025-06-13 13:05:11,118 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:24,050 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:24,051 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:24,053 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:05:24,054 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:05:26,889 - INFO - Searching medical knowledge for: CKD risk factors and patient assessment using groq embeddings
+2025-06-13 13:05:26,908 - INFO - Found 5 relevant documents for query: CKD risk factors and patient assessment
+2025-06-13 13:05:26,910 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:32,839 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:32,841 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:32,849 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:05:32,850 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:05:35,634 - INFO - Searching medical knowledge for: CKD risk assessment and patient evaluation using groq embeddings
+2025-06-13 13:05:35,670 - INFO - Found 5 relevant documents for query: CKD risk assessment and patient evaluation
+2025-06-13 13:05:35,673 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:39,808 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:39,809 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:39,826 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:43,986 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:43,989 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:44,014 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:52,535 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:52,536 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:52,551 - INFO - Assessment completed in 70.37 seconds
+2025-06-13 13:05:52,551 - INFO - Exporting results...
+2025-06-13 13:05:52,551 - INFO - Exported assessment to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim004_20250613_130552.md
+2025-06-13 13:05:52,551 - INFO - Simulation 4 completed. Results saved to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim004_20250613_130552.md
+2025-06-13 13:05:52,551 - INFO - Running simulation 5/5
+2025-06-13 13:05:52,552 - INFO - Generating patient responses...
+2025-06-13 13:05:52,552 - INFO - Generating text responses for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:05:52,552 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:54,358 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:54,358 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:54,359 - INFO - Generated response length: 1795 characters
+2025-06-13 13:05:54,359 - INFO - Successfully parsed 19 responses
+2025-06-13 13:05:54,359 - INFO - Running CKD assessment...
+2025-06-13 13:05:54,359 - INFO - Starting assessment for scenario: Female aged 35 has hiigh strss job and blood pressure. Compains of back pain
+2025-06-13 13:05:54,376 - INFO - Running CrewAI workflow...
+2025-06-13 13:05:54,394 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:56,430 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:56,432 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:56,448 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:05:59,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:05:59,620 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:05:59,638 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:06:07,262 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:06:07,263 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:06:07,267 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:06:07,267 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:06:10,242 - INFO - Searching medical knowledge for: CKD risk factors using groq embeddings
+2025-06-13 13:06:10,257 - INFO - Found 5 relevant documents for query: CKD risk factors
+2025-06-13 13:06:10,260 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:06:20,870 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:06:20,872 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:06:20,875 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:06:20,875 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:06:23,599 - INFO - Searching medical knowledge for: KDIGO guidelines for CKD risk assessment using groq embeddings
+2025-06-13 13:06:23,630 - INFO - Found 5 relevant documents for query: KDIGO guidelines for CKD risk assessment
+2025-06-13 13:06:23,633 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:06:44,058 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:06:44,060 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:06:44,064 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:06:44,064 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:06:46,654 - INFO - Searching medical knowledge for: CKD risk factors and symptoms using groq embeddings
+2025-06-13 13:06:46,679 - INFO - Found 5 relevant documents for query: CKD risk factors and symptoms
+2025-06-13 13:06:46,682 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:06:52,426 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:06:52,429 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:06:52,432 - INFO - Use pytorch device_name: cpu
+2025-06-13 13:06:52,432 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-13 13:06:55,056 - INFO - Searching medical knowledge for: CKD risk assessment using groq embeddings
+2025-06-13 13:06:55,071 - INFO - Found 5 relevant documents for query: CKD risk assessment
+2025-06-13 13:06:55,074 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:06:59,577 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:06:59,578 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:06:59,600 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:07:06,575 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:07:06,576 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:07:06,591 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-13 13:07:15,148 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-13 13:07:15,150 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-13 13:07:15,165 - INFO - Assessment completed in 80.81 seconds
+2025-06-13 13:07:15,166 - INFO - Exporting results...
+2025-06-13 13:07:15,166 - INFO - Exported assessment to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim005_20250613_130715.md
+2025-06-13 13:07:15,166 - INFO - Simulation 5 completed. Results saved to: output/ckd_assessment_Female_aged_35_has_hiigh_strss_job_and_blood_press_sim005_20250613_130715.md
+2025-06-13 13:07:15,167 - INFO - All 5 simulations completed successfully!
+2025-06-16 12:43:20,978 - INFO - Starting CKD Scenario Testing Script
+2025-06-16 12:43:20,990 - INFO - Loaded 40 scenarios from scenarios/ckd_scenarios.csv
+2025-06-16 12:43:20,990 - INFO - Initialized scenario generator with groq/llama
+2025-06-16 12:43:20,991 - INFO - Loaded 19 questions for testing
+2025-06-16 12:43:20,991 - INFO - Initialized workflow tester with groq/llama
+2025-06-16 12:43:20,991 - INFO - Using embedder: huggingface
+2025-06-16 12:43:20,992 - INFO - Results will be exported to: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 12:43:20,992 - INFO - Consolidated reports will be exported to: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 12:43:20,994 - INFO - Processing scenario 1: Classic full-risk
+2025-06-16 12:43:20,994 - INFO - Running simulation 1/1
+2025-06-16 12:43:20,995 - INFO - Generating patient responses...
+2025-06-16 12:43:20,995 - INFO - Generating text responses for scenario: Classic full-risk
+2025-06-16 12:43:21,004 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:43:22,962 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:43:22,974 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:43:22,979 - INFO - Generated response length: 1566 characters
+2025-06-16 12:43:22,980 - INFO - Successfully parsed 19 responses
+2025-06-16 12:43:22,980 - INFO - Running CKD assessment...
+2025-06-16 12:43:22,981 - INFO - Starting assessment for scenario: Classic full-risk
+2025-06-16 12:43:23,047 - INFO - Running CrewAI workflow...
+2025-06-16 12:43:23,082 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:43:25,187 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:43:25,190 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:43:25,220 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:43:28,080 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:43:28,086 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:43:28,117 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:43:36,751 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:43:36,753 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:43:45,686 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:43:45,686 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:43:49,531 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-16 12:43:49,826 - INFO - Searching medical knowledge for: CKD risk factors and their individual contributions to overall risk using groq embeddings
+2025-06-16 12:43:50,058 - INFO - Found 5 relevant documents for query: CKD risk factors and their individual contributions to overall risk
+2025-06-16 12:43:50,067 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:44:17,771 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:44:17,774 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:44:17,787 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:44:17,787 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:44:20,826 - INFO - Searching medical knowledge for: high blood pressure and CKD risk using groq embeddings
+2025-06-16 12:44:20,890 - INFO - Found 5 relevant documents for query: high blood pressure and CKD risk
+2025-06-16 12:44:20,900 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:44:52,040 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:44:52,043 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:44:52,051 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:44:52,052 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:44:54,875 - INFO - Searching medical knowledge for: Type 2 diabetes and CKD risk using groq embeddings
+2025-06-16 12:44:54,924 - INFO - Found 5 relevant documents for query: Type 2 diabetes and CKD risk
+2025-06-16 12:44:54,933 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:45:25,848 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:45:25,851 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:45:25,859 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:45:25,860 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:45:28,604 - INFO - Searching medical knowledge for: cardiovascular disease and CKD risk using groq embeddings
+2025-06-16 12:45:28,674 - INFO - Found 5 relevant documents for query: cardiovascular disease and CKD risk
+2025-06-16 12:45:28,687 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:45:59,996 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:45:59,999 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:46:00,009 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:46:00,009 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:46:02,840 - INFO - Searching medical knowledge for: decreased appetite and CKD risk using groq embeddings
+2025-06-16 12:46:02,894 - INFO - Found 5 relevant documents for query: decreased appetite and CKD risk
+2025-06-16 12:46:02,903 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:46:34,031 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:46:34,034 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:46:34,043 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:46:34,044 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:46:36,703 - INFO - Searching medical knowledge for: swelling in feet and ankles and CKD risk using groq embeddings
+2025-06-16 12:46:36,733 - INFO - Found 5 relevant documents for query: swelling in feet and ankles and CKD risk
+2025-06-16 12:46:36,736 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:47:08,188 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:47:08,192 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:47:08,199 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:47:08,201 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:47:10,941 - INFO - Searching medical knowledge for: blood in urine and CKD risk using groq embeddings
+2025-06-16 12:47:11,040 - INFO - Found 5 relevant documents for query: blood in urine and CKD risk
+2025-06-16 12:47:11,058 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:47:52,885 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:47:52,888 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:47:52,896 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:47:52,896 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:47:55,619 - INFO - Searching medical knowledge for: nocturia and CKD risk using groq embeddings
+2025-06-16 12:47:55,671 - INFO - Found 5 relevant documents for query: nocturia and CKD risk
+2025-06-16 12:47:55,676 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:48:02,833 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:48:02,835 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:48:02,857 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:48:08,871 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:48:08,874 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:48:08,904 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:48:16,977 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:48:16,984 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:48:17,002 - INFO - Assessment completed in 294.02 seconds
+2025-06-16 12:48:17,003 - INFO - Exporting results...
+2025-06-16 12:48:17,005 - INFO - Exported assessment to: output/scenarios/scenario_1/ckd_assessment_Classic_full_risk_sim001_20250616_124817.md
+2025-06-16 12:48:17,006 - INFO - Simulation 1 completed. Results saved to: output/scenarios/scenario_1/ckd_assessment_Classic_full_risk_sim001_20250616_124817.md
+2025-06-16 12:48:17,006 - INFO - Generating consolidated reports...
+2025-06-16 12:48:17,018 - INFO - Consolidated reports generated: {'responses': 'output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_124817_responses.csv', 'risk_factors': 'output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_124817_risk_factors.csv', 'risk_scores': 'output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_124817_risk_scores.csv'}
+2025-06-16 12:48:17,019 - INFO - Running analysis on consolidated results...
+2025-06-16 12:48:17,033 - INFO - Initialized analyzer with input directory: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 12:48:17,033 - INFO - Loading responses data from: output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_124817_responses.csv
+2025-06-16 12:48:17,122 - INFO - Loading risk_factors data from: output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_124817_risk_factors.csv
+2025-06-16 12:48:17,131 - INFO - Loading risk_scores data from: output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_124817_risk_scores.csv
+2025-06-16 12:48:17,154 - ERROR - Testing failed: Index contains duplicate entries, cannot reshape
+2025-06-16 12:55:11,165 - INFO - Starting CKD Scenario Testing Script
+2025-06-16 12:55:11,168 - INFO - Loaded 40 scenarios from scenarios/ckd_scenarios.csv
+2025-06-16 12:55:11,169 - INFO - Initialized scenario generator with groq/llama
+2025-06-16 12:55:11,169 - INFO - Loaded 19 questions for testing
+2025-06-16 12:55:11,170 - INFO - Initialized workflow tester with groq/llama
+2025-06-16 12:55:11,170 - INFO - Using embedder: huggingface
+2025-06-16 12:55:11,170 - INFO - Results will be exported to: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 12:55:11,171 - INFO - Consolidated reports will be exported to: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 12:55:11,171 - INFO - Processing scenario 1: Classic full-risk
+2025-06-16 12:55:11,171 - INFO - Running simulation 1/1
+2025-06-16 12:55:11,172 - INFO - Generating patient responses...
+2025-06-16 12:55:11,172 - INFO - Generating text responses for scenario: Classic full-risk
+2025-06-16 12:55:11,180 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:55:12,986 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:55:12,989 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:55:12,994 - INFO - Generated response length: 1566 characters
+2025-06-16 12:55:12,995 - INFO - Successfully parsed 19 responses
+2025-06-16 12:55:12,995 - INFO - Running CKD assessment...
+2025-06-16 12:55:12,996 - INFO - Starting assessment for scenario: Classic full-risk
+2025-06-16 12:55:13,070 - INFO - Running CrewAI workflow...
+2025-06-16 12:55:13,112 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:55:15,209 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:55:15,212 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:55:15,240 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:55:19,488 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:55:19,491 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:55:19,523 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:55:27,742 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:55:27,744 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:55:33,080 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:55:33,081 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:55:36,875 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-16 12:55:37,077 - INFO - Searching medical knowledge for: CKD risk factors and symptoms using groq embeddings
+2025-06-16 12:55:37,192 - INFO - Found 5 relevant documents for query: CKD risk factors and symptoms
+2025-06-16 12:55:37,198 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:55:56,082 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:55:56,085 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:55:56,099 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:55:56,099 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:55:58,960 - INFO - Searching medical knowledge for: CKD management and treatment using groq embeddings
+2025-06-16 12:55:59,007 - INFO - Found 5 relevant documents for query: CKD management and treatment
+2025-06-16 12:55:59,015 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:56:26,413 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:56:26,416 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:56:26,420 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:56:26,420 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:56:29,223 - INFO - Searching medical knowledge for: CKD risk factors and percentage contributions using groq embeddings
+2025-06-16 12:56:29,271 - INFO - Found 5 relevant documents for query: CKD risk factors and percentage contributions
+2025-06-16 12:56:29,284 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 12:56:35,277 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 12:56:35,280 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 12:56:35,288 - INFO - Use pytorch device_name: cpu
+2025-06-16 12:56:35,288 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 12:56:37,967 - INFO - Searching medical knowledge for: CKD risk assessment with detailed factors using groq embeddings
+2025-06-16 12:56:38,017 - INFO - Found 5 relevant documents for query: CKD risk assessment with detailed factors
+2025-06-16 12:56:38,026 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+                                                                                                                                                                                                        2025-06-16 13:00:27,069 - INFO - Starting CKD Scenario Testing Script
+2025-06-16 13:00:27,074 - INFO - Loaded 40 scenarios from scenarios/ckd_scenarios.csv
+2025-06-16 13:00:27,074 - INFO - Initialized scenario generator with groq/llama
+2025-06-16 13:00:27,074 - INFO - Loaded 19 questions for testing
+2025-06-16 13:00:27,074 - INFO - Initialized workflow tester with groq/llama
+2025-06-16 13:00:27,075 - INFO - Using embedder: huggingface
+2025-06-16 13:00:27,075 - INFO - Results will be exported to: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 13:00:27,075 - INFO - Consolidated reports will be exported to: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 13:00:27,077 - INFO - Processing scenario 1: Classic full-risk
+2025-06-16 13:00:27,077 - INFO - Running simulation 1/1
+2025-06-16 13:00:27,077 - INFO - Generating patient responses...
+2025-06-16 13:00:27,077 - INFO - Generating text responses for scenario: Classic full-risk
+2025-06-16 13:00:27,083 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:00:28,932 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:00:28,935 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:00:28,937 - INFO - Generated response length: 1566 characters
+2025-06-16 13:00:28,937 - INFO - Successfully parsed 19 responses
+2025-06-16 13:00:28,937 - INFO - Running CKD assessment...
+2025-06-16 13:00:28,937 - INFO - Starting assessment for scenario: Classic full-risk
+2025-06-16 13:00:28,981 - INFO - Running CrewAI workflow...
+2025-06-16 13:00:29,011 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:00:31,099 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:00:31,100 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:00:31,115 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:00:34,200 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:00:34,201 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:00:34,217 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:00:42,844 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:00:42,846 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:00:50,517 - INFO - Use pytorch device_name: cpu
+2025-06-16 13:00:50,517 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 13:00:54,369 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-16 13:00:54,577 - INFO - Searching medical knowledge for: CKD risk factors and symptoms using groq embeddings
+2025-06-16 13:00:54,771 - INFO - Found 5 relevant documents for query: CKD risk factors and symptoms
+2025-06-16 13:00:54,775 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:01:03,883 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:01:03,887 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:01:03,898 - INFO - Use pytorch device_name: cpu
+2025-06-16 13:01:03,898 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 13:01:06,750 - INFO - Searching medical knowledge for: CKD risk assessment and factor analysis using groq embeddings
+2025-06-16 13:01:06,806 - INFO - Found 5 relevant documents for query: CKD risk assessment and factor analysis
+2025-06-16 13:01:06,815 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:01:37,621 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:01:37,625 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:01:37,658 - INFO - Use pytorch device_name: cpu
+2025-06-16 13:01:37,659 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-16 13:01:41,312 - INFO - Searching medical knowledge for: CKD risk factors and assessment using groq embeddings
+2025-06-16 13:01:41,358 - INFO - Found 5 relevant documents for query: CKD risk factors and assessment
+2025-06-16 13:01:41,371 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:01:46,972 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:01:46,974 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:01:46,988 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:01:51,114 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:01:51,116 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:01:51,129 - INFO - 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2025-06-16 13:01:59,541 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 13:01:59,545 - INFO - Wrapper: Completed Call, calling success_handler
+2025-06-16 13:01:59,568 - INFO - Assessment completed in 90.63 seconds
+2025-06-16 13:01:59,568 - INFO - Exporting results...
+2025-06-16 13:01:59,570 - INFO - Exported assessment to: output/scenarios/scenario_1/ckd_assessment_Classic_full_risk_sim001_20250616_130159.md
+2025-06-16 13:01:59,570 - INFO - Simulation 1 completed. Results saved to: output/scenarios/scenario_1/ckd_assessment_Classic_full_risk_sim001_20250616_130159.md
+2025-06-16 13:01:59,571 - INFO - Generating consolidated reports...
+2025-06-16 13:01:59,577 - INFO - Consolidated reports generated: {'responses': 'output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_130159_responses.csv', 'risk_factors': 'output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_130159_risk_factors.csv', 'risk_scores': 'output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_130159_risk_scores.csv'}
+2025-06-16 13:01:59,577 - INFO - Running analysis on consolidated results...
+2025-06-16 13:01:59,580 - INFO - Initialized analyzer with input directory: /home/prashanth/ishan/workspace/ckd/output/scenarios
+2025-06-16 13:01:59,581 - INFO - Loading responses data from: output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_130159_responses.csv
+2025-06-16 13:01:59,589 - INFO - Loading risk_factors data from: output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_130159_risk_factors.csv
+2025-06-16 13:01:59,594 - INFO - Loading risk_scores data from: output/scenarios/scenario_1/consolidated_Classic_full_risk_20250616_130159_risk_scores.csv
+2025-06-16 13:01:59,609 - ERROR - Testing failed: Index contains duplicate entries, cannot reshape
